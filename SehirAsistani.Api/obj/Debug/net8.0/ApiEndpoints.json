@@ -1,0 +1,59 @@
+[
+  {
+    "ContainingType": "SehirAsistanim.API.Controllers.AuthController",
+    "Method": "SendEmailVerification",
+    "RelativePath": "api/Auth/send-verification-code",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SehirAsistanim.API.Controllers.AuthController",
+    "Method": "VerifyCode",
+    "RelativePath": "api/Auth/verify-code",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "email",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "code",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "SehirAsistani.Api.Controllers.KullaniciController",
+    "Method": "GetAll",
+    "RelativePath": "Kullanici/GetAll",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.List\u00601[[SehirAsistanim.Domain.Entities.Kullanici, SehirAsistanim.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  }
+]

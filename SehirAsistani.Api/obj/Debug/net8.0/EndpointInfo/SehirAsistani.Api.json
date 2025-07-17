@@ -1,0 +1,159 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "SehirAsistani.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Auth/send-verification-code": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Auth/verify-code": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "code",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/Kullanici/GetAll": {
+      "get": {
+        "tags": [
+          "Kullanici"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Kullanici"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Kullanici"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Kullanici"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Kullanici": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "isim": {
+            "type": "string",
+            "nullable": true
+          },
+          "soyisim": {
+            "type": "string",
+            "nullable": true
+          },
+          "tc": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonNo": {
+            "type": "string",
+            "nullable": true
+          },
+          "cinsiyet": {
+            "type": "string",
+            "nullable": true
+          },
+          "dogumTarihi": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "kayitTarihi": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "sifre": {
+            "type": "string",
+            "nullable": true
+          },
+          "rol": {
+            "$ref": "#/components/schemas/rolturu"
+          }
+        },
+        "additionalProperties": false
+      },
+      "rolturu": {
+        "enum": [
+          0,
+          1,
+          2
+        ],
+        "type": "integer",
+        "format": "int32"
+      }
+    }
+  }
+}
