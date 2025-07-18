@@ -3,6 +3,6 @@ builder = "dockerfile"
 dockerfilePath = "./SehirAsistani.Api/Dockerfile"
 
 [deploy]
-startCommand = "./SehirAsistani.Api"
+startCommand = "./SehirAsistani.Api.dll"
 restartPolicyType = "always"
 healthcheckPath = "/health"
