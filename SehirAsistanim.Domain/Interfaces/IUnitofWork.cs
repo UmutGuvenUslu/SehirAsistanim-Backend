@@ -4,6 +4,6 @@
     {
         IGenericRepository<T> Repository<T>() where T : class, IEntitiy;
 
-        int Commit();
+         Task<int> Commit();
     }
 }

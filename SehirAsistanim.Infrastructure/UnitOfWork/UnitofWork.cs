@@ -29,17 +29,15 @@ namespace SehirAsistanim.Infrastructure.UnitOfWork
 
 
         #region Commit
-        public int Commit()
+        public async Task<int> Commit()
         {
             try
             {
-                return _context.SaveChanges();
+                return await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
-                // Hata loglama yapabilirsin, ex.InnerException olabilir null, dikkat
                 var errorMessage = ex.InnerException?.Message ?? ex.Message;
-                // Loglama veya başka işlem yapılabilir
                 throw new Exception(errorMessage);
             }
         }
