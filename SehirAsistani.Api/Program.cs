@@ -112,12 +112,18 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
-app.UseHealthChecks("/health");
-app.UseCors("AllowAll");
-app.UseAuthentication();
-app.UseAuthorization();
 app.UseHttpsRedirection();
-app.UseAuthorization();
+
+app.UseRouting();            
+
+app.UseCors("AllowAll");     
+
+app.UseAuthentication();      
+
+app.UseAuthorization();      
+
+app.UseHealthChecks("/health");
+
 app.MapControllers();
 
 app.Run();
