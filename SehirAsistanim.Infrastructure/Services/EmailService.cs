@@ -1,8 +1,7 @@
 ﻿using Microsoft.Extensions.Caching.Memory;
 using SehirAsistanim.Domain.Interfaces;
-using System;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
+
 
 namespace SehirAsistanim.Infrastructure.Services
 {
@@ -28,7 +27,7 @@ namespace SehirAsistanim.Infrastructure.Services
     }
 
 
-    public async Task SendEmailVerificationCode(string email)
+    public async Task SendVerificationCode(string email)
         {
             // 6 haneli rastgele doğrulama kodu üret
             var code = GenerateCode();
@@ -40,7 +39,7 @@ namespace SehirAsistanim.Infrastructure.Services
             await _smtpService.Gonder(email, "Email Doğrulama", mesaj);
         }
 
-        public bool VerifyEmailCode(string email, string userCode)
+        public bool IsVerified(string email, string userCode)
         {
             // Cache'den kodu al
             if (_memoryCache.TryGetValue($"EmailVerification:{email}", out string? storedCode))

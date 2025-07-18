@@ -1,8 +1,4 @@
-﻿using System;
-using SehirAsistanim.Domain.Entities;
-using SehirAsistanim.Domain.Interfaces;
-
-namespace SehirAsistanim.Domain.Interfaces
+﻿namespace SehirAsistanim.Domain.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

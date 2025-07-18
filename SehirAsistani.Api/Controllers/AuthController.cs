@@ -1,35 +1,52 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SehirAsistanim.Domain.Dto_s;
+using SehirAsistanim.Domain.Interfaces;
 using SehirAsistanim.Infrastructure.Services;
 
-namespace SehirAsistanim.API.Controllers
+[ApiController]
+[Route("api/[controller]")]
+public class AuthController : ControllerBase
 {
-    [ApiController]
-    [Route("api/[controller]")]
-    public class AuthController : ControllerBase
+    private readonly EmailService _emailService;
+    private readonly IAuthService _authService;
+
+    public AuthController(EmailService emailService, IAuthService authService)
     {
-        public readonly EmailService _emailService;
+        _emailService = emailService;
+        _authService = authService;
+    }
 
-        public AuthController(EmailService emailService)
+    [HttpPost("send-verification-code")]
+    public async Task<IActionResult> SendVerificationCode([FromQuery] string email)
+    {
+        await _emailService.SendVerificationCode(email);
+        return Ok(new { message = "Doğrulama kodu gönderildi." });
+    }
+
+    [HttpPost("verify-and-register")]
+    public async Task<IActionResult> VerifyAndRegister([FromBody] RegisterDto dto)
+    {
+        if (!_emailService.IsVerified(dto.Email, dto.Kod))
         {
-            _emailService = emailService;
+            return BadRequest(new { message = "Doğrulama kodu geçersiz veya süresi dolmuş." });
         }
 
-        [HttpPost("send-verification-code")]
-        public async Task<IActionResult> SendEmailVerification(string email)
+        var result = await _authService.RegisterAsync(dto);
+        return Ok(result);
+    }
+
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginDto dto)
+    {
+        try
         {
-            await _emailService.SendEmailVerificationCode(email);
-            return Ok(new { message = "Doğrulama kodu gönderildi." });
+            var result = await _authService.LoginAsync(dto);
+            return Ok(result);
         }
-
-        [HttpPost("verify-code")]
-        public IActionResult VerifyCode(string email, string code)
+        catch (Exception ex)
         {
-            bool isValid = _emailService.VerifyEmailCode(email, code);
-
-            if (isValid) {
-                return Ok(new { message = "Email doğrulandı." });
-            }
-            return BadRequest(new { message = "Kod geçersiz veya süresi dolmuş." });
+            return BadRequest(new { message = ex.Message });
         }
     }
+
 }

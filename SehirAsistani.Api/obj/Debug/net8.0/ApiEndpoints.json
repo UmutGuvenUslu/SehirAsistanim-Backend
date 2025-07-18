@@ -1,7 +1,23 @@
 [
   {
-    "ContainingType": "SehirAsistanim.API.Controllers.AuthController",
-    "Method": "SendEmailVerification",
+    "ContainingType": "AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "SehirAsistanim.Domain.Dto_s.LoginDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AuthController",
+    "Method": "SendVerificationCode",
     "RelativePath": "api/Auth/send-verification-code",
     "HttpMethod": "POST",
     "IsController": true,
@@ -16,22 +32,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "SehirAsistanim.API.Controllers.AuthController",
-    "Method": "VerifyCode",
-    "RelativePath": "api/Auth/verify-code",
+    "ContainingType": "AuthController",
+    "Method": "VerifyAndRegister",
+    "RelativePath": "api/Auth/verify-and-register",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "email",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "code",
-        "Type": "System.String",
-        "IsRequired": false
+        "Name": "dto",
+        "Type": "SehirAsistanim.Domain.Dto_s.RegisterDto",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

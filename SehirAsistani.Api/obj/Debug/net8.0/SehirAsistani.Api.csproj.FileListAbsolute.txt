@@ -101,3 +101,6 @@ C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsi
 C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistani.Api\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistani.Api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistani.Api\obj\Debug\net8.0\EFCoreNpgsqlNetTopologySuite.cs
+C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistani.Api\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistani.Api\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistani.Api\bin\Debug\net8.0\BouncyCastle.Crypto.dll

@@ -68,5 +68,8 @@ namespace SehirAsistanim.Infrastructure.Repositories
         }
 
         #endregion
+
+       
+
     }
 }
