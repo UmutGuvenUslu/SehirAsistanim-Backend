@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {}
+    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
+    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
         "projectName": "SehirAsistanim.Domain",
-        "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+        "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
         "packagesPath": "C:\\Users\\umutg\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistanim.Domain\\obj\\",
+        "outputPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

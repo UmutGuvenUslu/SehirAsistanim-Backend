@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1WSmV8nFOrg=",
+  "dgSpecHash": "l+FlGktSUPI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistani.Api\\SehirAsistani.Api.csproj",
+  "projectFilePath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\SehirAsistani.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\umutg\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
@@ -37,6 +37,7 @@
     "C:\\Users\\umutg\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
+    "C:\\Users\\umutg\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\microsoft.visualstudio.azure.containers.tools.targets.1.21.0.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\nettopologysuite\\2.6.0\\nettopologysuite.2.6.0.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\nettopologysuite.features\\2.1.0\\nettopologysuite.features.2.1.0.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\nettopologysuite.io.geojson4stj\\4.0.0\\nettopologysuite.io.geojson4stj.4.0.0.nupkg.sha512",

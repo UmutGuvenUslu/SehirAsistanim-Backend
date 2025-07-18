@@ -13,6 +13,12 @@ using SehirAsistanim.Infrastructure.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+var port = Environment.GetEnvironmentVariable("PORT")?? "8888";
+builder.WebHost.UseUrls($"http://*:{port}");
+
+builder.Services.AddHealthChecks(); 
+
 #region Cors
 builder.Services.AddCors(options =>
 {
@@ -85,6 +91,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseHealthChecks("/health");
 app.UseCors("AllowAll");
 app.UseAuthentication();
 app.UseAuthorization();

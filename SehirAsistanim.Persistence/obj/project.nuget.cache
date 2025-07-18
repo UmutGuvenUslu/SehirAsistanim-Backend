@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0vx7jDGcxB0=",
+  "dgSpecHash": "ZfFqyoe+Dk4=",
   "success": true,
-  "projectFilePath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistani\\Backend\\SehirAsistani.Api\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj",
+  "projectFilePath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\umutg\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\umutg\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
