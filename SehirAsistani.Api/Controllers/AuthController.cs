@@ -26,14 +26,23 @@ public class AuthController : ControllerBase
     [HttpPost("verify-and-register")]
     public async Task<IActionResult> VerifyAndRegister([FromBody] RegisterDto dto)
     {
-        if (!_emailService.IsVerified(dto.Email, dto.Kod))
+        try
         {
-            return BadRequest(new { message = "Doğrulama kodu geçersiz veya süresi dolmuş." });
-        }
+            if (!_emailService.IsVerified(dto.Email, dto.Kod))
+            {
+                return BadRequest(new { message = "Doğrulama kodu geçersiz veya süresi dolmuş." });
+            }
 
-        var result = await _authService.RegisterAsync(dto);
-        return Ok(result);
+            var result = await _authService.RegisterAsync(dto);
+            return Ok(result);
+        }
+        catch (Exception ex)
+        {
+            // Loglama yapabilirsin
+            return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
+        }
     }
+
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
