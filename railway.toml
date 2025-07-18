@@ -1,6 +1,6 @@
 [build]
 builder = "dockerfile"
-dockerfilePath = "./SehirAsistani.Api\Dockerfile"
+dockerfilePath = "./SehirAsistani.Api/Dockerfile"
 
 [deploy]
 startCommand = "./SehirAsistani.Api"
