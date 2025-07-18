@@ -13,11 +13,10 @@ using SehirAsistanim.Infrastructure.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
-var port = Environment.GetEnvironmentVariable("PORT")?? "8888";
+var port = Environment.GetEnvironmentVariable("PORT") ?? "8888";
 builder.WebHost.UseUrls($"http://*:{port}");
 
-builder.Services.AddHealthChecks(); 
+builder.Services.AddHealthChecks();
 
 #region Cors
 builder.Services.AddCors(options =>
@@ -31,13 +30,38 @@ builder.Services.AddCors(options =>
 });
 #endregion
 
-
 #region Enum Mapping + SQL Connection
 NpgsqlConnection.GlobalTypeMapper.MapEnum<rolturu>("rolturu");
 
+string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+
+string connectionString;
+
+if (!string.IsNullOrEmpty(databaseUrl))
+{
+    var databaseUri = new Uri(databaseUrl);
+    var userInfo = databaseUri.UserInfo.Split(':');
+
+    var npgsqlBuilder = new NpgsqlConnectionStringBuilder
+    {
+        Host = databaseUri.Host,
+        Port = databaseUri.Port,
+        Username = userInfo[0],
+        Password = userInfo[1],
+        Database = databaseUri.AbsolutePath.TrimStart('/'),
+        SslMode = SslMode.Require,
+        TrustServerCertificate = true,
+    };
+    connectionString = npgsqlBuilder.ToString();
+}
+else
+{
+    connectionString = builder.Configuration.GetConnectionString("DefaultConnection")!;
+}
+
 builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
     options.UseNpgsql(
-        builder.Configuration.GetConnectionString("DefaultConnection"),
+        connectionString,
         npgsqlOptions =>
         {
             npgsqlOptions.UseNetTopologySuite(); // Harita desteği
@@ -79,9 +103,6 @@ builder.Services.AddAuthentication("Bearer")
             )
         };
     });
-
-
-
 
 var app = builder.Build();
 
