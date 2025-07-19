@@ -58,4 +58,30 @@ public class AuthController : ControllerBase
         }
     }
 
+    #region KullaniciEmailVarMi
+    [HttpGet("IsEmailRegistered")]
+    public async Task<IActionResult> IsEmailRegistered([FromQuery] string email)
+    {
+        if (string.IsNullOrWhiteSpace(email))
+            return BadRequest("Email boş olamaz.");
+
+        var result = await _authService.IsEmailRegistered(email);
+        return Ok(new { emailVar = result });
+    }
+    #endregion
+
+    #region KullaniciTCVarMi
+    [HttpGet("IsTCRegistered")]
+    public async Task<IActionResult> IsTCRegistered([FromQuery] string tc)
+    {
+        if (string.IsNullOrWhiteSpace(tc))
+            return BadRequest("TC boş olamaz.");
+
+        var result = await _authService.IsPhoneRegistered(tc);
+        return Ok(new { tcVar = result });
+    }
+    #endregion
+
+
+
 }

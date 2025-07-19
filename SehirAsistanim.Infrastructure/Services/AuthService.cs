@@ -118,5 +118,26 @@ namespace SehirAsistanim.Infrastructure.Services
             return Task.FromResult(result);
         }
         #endregion
+
+        #region KullaniciEmailVarMi
+        public async Task<bool> IsEmailRegistered(string email)
+        {
+            var kullanici = await _unitOfWork.Repository<Kullanici>().GetAll();
+            return kullanici.Any(k => k.Email == email);
+        }
+        #endregion
+
+        #region KullaniciTCVarMi
+
+        public async Task<bool> IsPhoneRegistered(string phone)
+        {
+            var kullanici = await _unitOfWork.Repository<Kullanici>().GetAll();
+            return kullanici.Any(k => k.TC == phone);
+        }
+
+        #endregion
+
+
     }
 }
+

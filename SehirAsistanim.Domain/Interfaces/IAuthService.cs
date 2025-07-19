@@ -9,6 +9,9 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<AuthResultDto> RegisterAsync(RegisterDto dto);
         Task<string> GenerateJwtToken(Kullanici user);
         Task<bool> VerifyPassword(string hash, string password);
+        Task<bool> IsEmailRegistered(string email);
+        Task<bool> IsPhoneRegistered(string phone);
+
 
     }
 }
