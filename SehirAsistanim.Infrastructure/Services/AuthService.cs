@@ -55,7 +55,7 @@ namespace SehirAsistanim.Infrastructure.Services
         #region Kayıt Ol
         public async Task<AuthResultDto> RegisterAsync(RegisterDto dto)
         {
-            if (_unitOfWork.Repository<Kullanici>().GetAll().Result.Any(k => k.Email == dto.Email))
+            if (!(_unitOfWork.Repository<Kullanici>().GetAll().Result.FirstOrDefault(k => k.Email == dto.Email) == null))
             {
                 throw new Exception("Bu e-posta zaten kayıtlı.");
             }
