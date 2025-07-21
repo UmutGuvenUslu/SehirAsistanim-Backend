@@ -12,3 +12,17 @@ C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsi
 C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistanim.Domain\obj\Debug\net8.0\ref\SehirAsistanim.Domain.dll
 C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistanim.Domain\obj\Debug\net8.0\EFCoreSqlServerNetTopologySuite.cs
 C:\Users\umutg\OneDrive\Desktop\SehirAsistani\Backend\SehirAsistani.Api\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.sourcelink.json
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\bin\Debug\net8.0\SehirAsistanim.Domain.deps.json
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\bin\Debug\net8.0\SehirAsistanim.Domain.dll
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\bin\Debug\net8.0\SehirAsistanim.Domain.pdb
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.csproj.AssemblyReference.cache
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.AssemblyInfoInputs.cache
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.AssemblyInfo.cs
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.csproj.CoreCompileInputs.cache
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\EFCoreSqlServerNetTopologySuite.cs
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.sourcelink.json
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.dll
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\refint\SehirAsistanim.Domain.dll
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\SehirAsistanim.Domain.pdb
+C:\Users\umutg\OneDrive\Desktop\SehirAsistanim-Backend\SehirAsistanim.Domain\obj\Debug\net8.0\ref\SehirAsistanim.Domain.dll
