@@ -20,16 +20,16 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<List<Sikayet>> GetAll()
         {
             try
             {
-                var sikayetler = await _sikayetService.GetAll();
-                return Ok(sikayetler);
+                var sikayetler = await _sikayetService.GetAll().Result.ToList();
+                return sikayetler;
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Sunucu hatası: " + ex.InnerException.Message });
+                return null;
             }
         }
 

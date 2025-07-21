@@ -25,9 +25,8 @@ namespace SehirAsistanim.Infrastructure.Services
 
         public async Task<List<Sikayet>> GetAll()
         {
-            //return  _unitOfWork.Repository<Sikayet>().GetAll().Result.ToList();//deadlock riski
-            var list = await _unitOfWork.Repository<Sikayet>().GetAll();
-            return list.ToList();
+            return  _unitOfWork.Repository<Sikayet>().GetAll().Result.ToList();//deadlock riski
+            
         }
         public async Task<Sikayet> GetById(int sikayetId)
         {
