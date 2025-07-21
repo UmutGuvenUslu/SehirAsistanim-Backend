@@ -9,7 +9,7 @@ namespace SehirAsistani.Api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    [Authorize]//token olkamayn erişiemez
+    //[Authorize]//token olkamayn erişiemez
     public class SikayetController : ControllerBase
     {
         private readonly ISikayetService _sikayetService;
@@ -49,7 +49,7 @@ namespace SehirAsistani.Api.Controllers
                 return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
             }
         }
-
+        [Authorize]
         [HttpPost]
         public async Task<IActionResult> AddSikayet([FromBody] Sikayet model)
         {
