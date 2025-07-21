@@ -1,10 +1,7 @@
 ﻿using System.Text;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using NetTopologySuite;
-using NetTopologySuite.Geometries;
 using Npgsql;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
