@@ -20,7 +20,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<Sikayet> GetAll()
         {
             try
             {
@@ -29,12 +29,12 @@ namespace SehirAsistani.Api.Controllers
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
+                return StatusCode(500, new { message = "Sunucu hatası: " + ex.InnerException.Message });
             }
         }
 
         [HttpGet("{sikayetId}")]
-        public async Task<IActionResult> GetById(int sikayetId)
+        public async Task<Sikayet> GetById(int sikayetId)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace SehirAsistani.Api.Controllers
         }
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddSikayet([FromBody] Sikayet model)
+        public async Task<Sikayet> AddSikayet([FromBody] Sikayet model)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpPut("cozuldu/{sikayetId}")]
-        public async Task<IActionResult> Cozuldu(int sikayetId, [FromQuery] int cozenBirimId)
+        public async Task<Sikayet> Cozuldu(int sikayetId, [FromQuery] int cozenBirimId)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
         [HttpPut("dogrula/{sikayetId}")]
-        public async Task<IActionResult> IncrementDogrulama(int sikayetId)
+        public async Task<Sikayet> IncrementDogrulama(int sikayetId)
         {
             try
             {
