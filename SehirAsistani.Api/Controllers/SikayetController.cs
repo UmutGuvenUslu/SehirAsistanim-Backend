@@ -20,7 +20,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<Sikayet> GetAll()
+        public async Task<IActionResult> GetAll()
         {
             try
             {
@@ -34,7 +34,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpGet("{sikayetId}")]
-        public async Task<Sikayet> GetById(int sikayetId)
+        public async Task<IActionResult> GetById(int sikayetId)
         {
             try
             {
@@ -51,7 +51,7 @@ namespace SehirAsistani.Api.Controllers
         }
         [Authorize]
         [HttpPost]
-        public async Task<Sikayet> AddSikayet([FromBody] Sikayet model)
+        public async Task<IActionResult> AddSikayet([FromBody] Sikayet model)
         {
             try
             {
@@ -72,7 +72,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpPut("cozuldu/{sikayetId}")]
-        public async Task<Sikayet> Cozuldu(int sikayetId, [FromQuery] int cozenBirimId)
+        public async Task<IActionResult> Cozuldu(int sikayetId, [FromQuery] int cozenBirimId)
         {
             try
             {
@@ -88,7 +88,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
         [HttpPut("dogrula/{sikayetId}")]
-        public async Task<Sikayet> IncrementDogrulama(int sikayetId)
+        public async Task<IActionResult> IncrementDogrulama(int sikayetId)
         {
             try
             {
