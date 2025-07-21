@@ -42,8 +42,7 @@
               "RelativeToolTip": "SehirAsistani.Api\\Controllers\\KullaniciController.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACIAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T17:57:18.376Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T17:57:18.376Z"
             },
             {
               "$type": "Document",
@@ -55,8 +54,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "ViewState": "AQIAAAkAAAAAAAAAAAAAABkAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-21T17:56:00.069Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-21T17:56:00.069Z"
             },
             {
               "$type": "Document",
@@ -66,7 +64,7 @@
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "ToolTip": "C:\\Users\\elif_\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "RelativeToolTip": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
-              "ViewState": "AQIAAEIAAAAAAAAAAAAAAFkAAAAoAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAB8AAAAcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-21T17:13:59.916Z",
               "EditorCaption": ""

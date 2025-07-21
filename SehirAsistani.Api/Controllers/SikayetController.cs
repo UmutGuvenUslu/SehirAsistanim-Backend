@@ -20,11 +20,11 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Sikayet>> GetAll()
+        public List<Sikayet> GetAll()
         {
             try
             {
-                var sikayetler = await _sikayetService.GetAll().Result.ToList();
+                var sikayetler =_sikayetService.GetAll().Result.ToList();
                 return sikayetler;
             }
             catch (Exception ex)
