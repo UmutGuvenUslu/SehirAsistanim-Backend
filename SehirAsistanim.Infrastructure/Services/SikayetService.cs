@@ -25,11 +25,12 @@ namespace SehirAsistanim.Infrastructure.Services
 
         public async Task<List<Sikayet>> GetAll()
         {
-           return  _unitOfWork.Repository<Sikayet>().GetAll().Result.ToList();
+            return  _unitOfWork.Repository<Sikayet>().GetAll().Result.ToList();//deadlock riski
+            
         }
-        public Task<Sikayet> GetById(int sikayetId)
+        public async Task<Sikayet> GetById(int sikayetId)
         {
-            throw new NotImplementedException();
+            return await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
         }
         public async Task<Sikayet> AddSikayet(Sikayet sikayet)
         {
@@ -37,6 +38,44 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Repository<Sikayet>().Add(sikayet);
             await _unitOfWork.Commit();
             return sikayet;
+        }
+
+        public async Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId)
+        {
+            var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+            if (sikayet == null) return false;
+
+            sikayet.Durum= Domain.Enums.sikayetdurumu.Cozuldu;
+            sikayet.CozulmeTarihi = DateTime.UtcNow;
+            sikayet.CozenBirimId = cozenBirimId;
+
+            await _unitOfWork.Repository<Sikayet>().Update(sikayet);
+            await _unitOfWork.Commit();
+            return true;
+        }
+
+        //public async Task<bool> SoftDelete(int sikayetId)
+        //{
+        //    var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+        //    if(sikayet == null) return false;
+
+        //    sikayet.Silindimi =true;
+
+        //    await _unitOfWork.Repository<Sikayet>().Update(sikayet);
+        //    await _unitOfWork.Commit();
+
+        //    return true;
+        //}
+
+        public async Task<bool> IncrementDogrulama(int sikayetId)
+        {
+          var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+            if (sikayet == null) return false;
+
+            sikayet.DogrulanmaSayisi++;
+            await _unitOfWork.Repository<Sikayet>().Update(sikayet);
+            await _unitOfWork.Commit();
+            return true;
         }
     }
 }

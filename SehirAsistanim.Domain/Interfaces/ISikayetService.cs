@@ -9,10 +9,14 @@ namespace SehirAsistanim.Domain.Interfaces
 {
     public interface ISikayetService
     {
-        
+
         Task<List<Sikayet>> GetAll();
         Task<Sikayet> GetById(int sikayetId);
         Task<Sikayet> AddSikayet(Sikayet sikayet);
+
+        Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId);
+        //Task<bool> SoftDelete(int sikayetId);
+        Task<bool> IncrementDogrulama(int sikayetId);
 
     }
 }
