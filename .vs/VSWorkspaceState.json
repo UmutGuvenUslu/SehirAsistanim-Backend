@@ -3,6 +3,7 @@
     "",
     "\\SehirAsistani.Api",
     "\\SehirAsistani.Api\\Controllers",
+    "\\SehirAsistani.Api\\obj",
     "\\SehirAsistanim.Domain",
     "\\SehirAsistanim.Domain\\Entities",
     "\\SehirAsistanim.Domain\\Enums",

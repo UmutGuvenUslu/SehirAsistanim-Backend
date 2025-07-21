@@ -8,7 +8,7 @@ using SehirAsistanim.Domain.Enums;
 namespace SehirAsistani.Api.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("[controller]/[action]")]
     //[Authorize]//token olkamayn erişiemez
     public class SikayetController : ControllerBase
     {
