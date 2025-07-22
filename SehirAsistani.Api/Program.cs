@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Npgsql;
 using SehirAsistanim.Domain.Entities;
-using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
 using SehirAsistanim.Infrastructure.Services;
 using SehirAsistanim.Infrastructure.UnitOfWork;
@@ -27,12 +26,7 @@ builder.Services.AddCors(options =>
 });
 #endregion
 
-
-
-#region Enum Mapping + SQL Connection
-
-NpgsqlConnection.GlobalTypeMapper.MapEnum<rolturu>("rolturu");
-NpgsqlConnection.GlobalTypeMapper.MapEnum<sikayetdurumu>("sikayetdurumu");
+#region SQL Connection (Enum Mapping KALDIRILDI)
 
 string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
@@ -66,8 +60,9 @@ builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
         npgsqlOptions =>
         {
             npgsqlOptions.UseNetTopologySuite(); // Harita desteği
-            npgsqlOptions.MapEnum<rolturu>("rolturu");
-            npgsqlOptions.MapEnum<sikayetdurumu>("sikayetdurumu");
+            // MapEnum'ler kaldırıldı çünkü veritabanında text
+            // npgsqlOptions.MapEnum<rolturu>("rolturu");
+            // npgsqlOptions.MapEnum<sikayetdurumu>("sikayetdurumu");
         })
 );
 
@@ -81,7 +76,7 @@ builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
 builder.Services.AddScoped<ISmtpService, SmtpService>();
 builder.Services.AddScoped<IDuyguAnaliz, DuyguAnalizService>();
-builder.Services.AddScoped<ISikayetService,SikayetService>();
+builder.Services.AddScoped<ISikayetService, SikayetService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<EmailService>();
 #endregion
@@ -119,13 +114,13 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseRouting();            
+app.UseRouting();
 
-app.UseCors("AllowAll");     
+app.UseCors("AllowAll");
 
-app.UseAuthentication();      
+app.UseAuthentication();
 
-app.UseAuthorization();      
+app.UseAuthorization();
 
 app.UseHealthChecks("/health");
 
