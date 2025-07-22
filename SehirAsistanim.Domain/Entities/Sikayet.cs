@@ -30,7 +30,7 @@ namespace SehirAsistanim.Domain.Entities
         [Column("gonderilmetarihi")]
         public DateTime GonderilmeTarihi { get; set; } = DateTime.UtcNow;
         [Column("cozulmetarihi")]
-        public DateTime CozulmeTarihi { get; set; }
+        public DateTime? CozulmeTarihi { get; set; }
         [Column("durum")]
         public sikayetdurumu Durum { get; set; }
         [Column("dogrulanmasayisi")]
@@ -40,6 +40,6 @@ namespace SehirAsistanim.Domain.Entities
         [Column("silindimi")]
         public bool Silindimi { get; set; } = false;
         [Column("cozenbirimid")]
-        public int CozenBirimId { get; set; }
+        public int? CozenBirimId { get; set; }
     }
 }
