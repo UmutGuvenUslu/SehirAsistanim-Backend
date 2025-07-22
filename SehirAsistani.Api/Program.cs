@@ -30,7 +30,9 @@ builder.Services.AddCors(options =>
 
 
 #region Enum Mapping + SQL Connection
+
 NpgsqlConnection.GlobalTypeMapper.MapEnum<rolturu>("rolturu");
+NpgsqlConnection.GlobalTypeMapper.MapEnum<SikayetDurumu>("sikayetdurumu");
 
 string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
@@ -64,9 +66,11 @@ builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
         npgsqlOptions =>
         {
             npgsqlOptions.UseNetTopologySuite(); // Harita desteği
-            npgsqlOptions.MapEnum<rolturu>("rolturu"); // PostgreSQL enum eşlemesi
+            npgsqlOptions.MapEnum<rolturu>("rolturu");
+            npgsqlOptions.MapEnum<SikayetDurumu>("sikayetdurumu");
         })
 );
+
 #endregion
 
 #region Dependency Injection
