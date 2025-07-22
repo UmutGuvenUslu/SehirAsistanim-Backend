@@ -32,7 +32,7 @@ builder.Services.AddCors(options =>
 #region Enum Mapping + SQL Connection
 
 NpgsqlConnection.GlobalTypeMapper.MapEnum<rolturu>("rolturu");
-NpgsqlConnection.GlobalTypeMapper.MapEnum<SikayetDurumu>("sikayetdurumu");
+NpgsqlConnection.GlobalTypeMapper.MapEnum<sikayetdurumu>("sikayetdurumu");
 
 string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
 
