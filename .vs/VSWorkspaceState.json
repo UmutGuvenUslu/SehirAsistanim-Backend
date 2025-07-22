@@ -2,7 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\SehirAsistani.Api",
-    "\\SehirAsistani.Api\\obj",
+    "\\SehirAsistani.Api\\Controllers",
     "\\SehirAsistanim.Domain",
     "\\SehirAsistanim.Domain\\Entities",
     "\\SehirAsistanim.Domain\\Enums",
@@ -11,6 +11,6 @@
     "\\SehirAsistanim.Infrastructure\\Repositories",
     "\\SehirAsistanim.Infrastructure\\Services"
   ],
-  "SelectedNode": "\\SehirAsistanim.Domain\\Interfaces\\ISikayetService.cs",
+  "SelectedNode": "\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
   "PreviewInSolutionExplorer": false
 }

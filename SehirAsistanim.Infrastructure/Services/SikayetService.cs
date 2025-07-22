@@ -23,14 +23,20 @@ namespace SehirAsistanim.Infrastructure.Services
 
         public async Task<List<Sikayet>> GetAll()
         {
+<<<<<<< HEAD
             // Burada await kullan, .Result veya .Wait() kullanma
             var all = await _unitOfWork.Repository<Sikayet>().GetAll();
             return all.ToList();
         }
 
         public async Task<Sikayet> GetById(int sikayetId)
+=======
+           return  _unitOfWork.Repository<Sikayet>().GetAll().Result.ToList();
+        }
+        public Task<Sikayet> GetById(int sikayetId)
+>>>>>>> 1fbcfc4a91313febe2c48835fdc2e7c079c27f23
         {
-            return await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+            throw new NotImplementedException();
         }
 
         public async Task<Sikayet> AddSikayet(Sikayet sikayet)
@@ -40,6 +46,7 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Commit();
             return sikayet;
         }
+<<<<<<< HEAD
 
         public async Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId)
         {
@@ -79,5 +86,7 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Commit();
             return true;
         }
+=======
+>>>>>>> 1fbcfc4a91313febe2c48835fdc2e7c079c27f23
     }
 }
