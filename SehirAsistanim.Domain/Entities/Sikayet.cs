@@ -27,13 +27,13 @@ namespace SehirAsistanim.Domain.Entities
         public double Longitude { get; set; }
         [Column("fotourl")]
         public string FotoUrl { get; set; }
-        [Column("gonderilmetarih")]
+        [Column("gonderilmetarihi")]
         public DateTime GonderilmeTarihi { get; set; } = DateTime.UtcNow;
         [Column("cozulmetarihi")]
         public DateTime CozulmeTarihi { get; set; }
         [Column("durum")]
         public sikayetdurumu Durum { get; set; }
-        [Column("dogrulanmasayi")]
+        [Column("dogrulanmasayisi")]
         public int DogrulanmaSayisi { get; set; } = 1;
         [Column("duygupuani")]
         public double DuyguPuani { get; set; } = 0.0;
