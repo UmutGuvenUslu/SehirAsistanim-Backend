@@ -6,6 +6,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SehirAsistanim.Domain.Entities
 {
+    [Table("sikayetler")]
     public class Sikayet : IEntitiy
     {
 
