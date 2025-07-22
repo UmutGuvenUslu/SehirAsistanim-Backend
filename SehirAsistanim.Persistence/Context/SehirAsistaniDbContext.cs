@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using NetTopologySuite.Geometries;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Enums;
 
 public class SehirAsistaniDbContext : DbContext
 {
-
     public SehirAsistaniDbContext(DbContextOptions<SehirAsistaniDbContext> options)
         : base(options)
     {
@@ -20,7 +20,6 @@ public class SehirAsistaniDbContext : DbContext
     public DbSet<SikayetLog> SikayetLoglari { get; set; }
     public DbSet<SikayetCozum> SikayetCozumleri { get; set; }
     public DbSet<Bildirim> Bildirimler { get; set; }
-
     #endregion
 
     #region OnModelCreating
@@ -28,14 +27,17 @@ public class SehirAsistaniDbContext : DbContext
     {
         base.OnModelCreating(modelBuilder);
 
+        // Enum converters
+        var rolConverter = new EnumToStringConverter<rolturu>();
+        var durumConverter = new EnumToStringConverter<sikayetdurumu>();
+
         modelBuilder.Entity<Kullanici>()
             .Property(e => e.Rol)
-            .HasConversion(
-                v => v.ToString(),  // Enum'u string'e çevirirken
-                v => (rolturu)Enum.Parse(typeof(rolturu), v) // String'den enum'a dönüşüm
-            );
+            .HasConversion(rolConverter);
 
+        modelBuilder.Entity<Sikayet>()
+            .Property(e => e.Durum)
+            .HasConversion(durumConverter);
     }
     #endregion
-
 }

@@ -1,16 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SehirAsistani.Api",
-    "\\SehirAsistani.Api\\Controllers",
     "\\SehirAsistanim.Domain",
     "\\SehirAsistanim.Domain\\Entities",
     "\\SehirAsistanim.Domain\\Enums",
     "\\SehirAsistanim.Domain\\Interfaces",
     "\\SehirAsistanim.Infrastructure",
     "\\SehirAsistanim.Infrastructure\\Repositories",
-    "\\SehirAsistanim.Infrastructure\\Services"
+    "\\SehirAsistanim.Infrastructure\\Services",
+    "\\SehirAsistanim.Persistence",
+    "\\SehirAsistanim.Persistence\\Context"
   ],
-  "SelectedNode": "\\SehirAsistani.Api\\Program.cs",
+  "SelectedNode": "\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
