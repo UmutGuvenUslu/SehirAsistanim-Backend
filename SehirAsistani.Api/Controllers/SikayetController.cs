@@ -1,110 +1,105 @@
-﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using SehirAsistanim.Domain.Entities;
+using SehirAsistanim.Infrastructure.Services;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using SehirAsistanim.Domain.Interfaces;
-using System.Security.Claims;
-using SehirAsistanim.Domain.Enums;
 
 namespace SehirAsistani.Api.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    //[Authorize]//token olkamayn erişiemez
+  
     public class SikayetController : ControllerBase
     {
-        private readonly ISikayetService _sikayetService;
+        private readonly ISikayetService _service;
 
-        public SikayetController(ISikayetService sikayetService)
+        public SikayetController(ISikayetService service)
         {
-            _sikayetService = sikayetService;
+            _service = service;
         }
 
         [HttpGet]
-        public List<Sikayet> GetAll()
+        public async Task<List<Sikayet>> GetAll()
         {
             try
             {
-                var sikayetler =_sikayetService.GetAll().Result.ToList();
-                return sikayetler;
+                return await _service.GetAll();
             }
             catch (Exception ex)
             {
-                return null;
+                Console.WriteLine($"GetAll hata: {ex.Message}");
+                return new List<Sikayet>(); 
             }
         }
-
-        [HttpGet("{sikayetId}")]
-        public async Task<IActionResult> GetById(int sikayetId)
+        [Authorize]
+        [HttpGet("{id}")]
+        public async Task<Sikayet> GetById(int id)
         {
             try
             {
-                var sikayet = await _sikayetService.GetById(sikayetId);
-                if (sikayet == null)
-                    return NotFound(new { message = "Şikayet bulunamadı." });
-
-                return Ok(sikayet);
+                return await _service.GetById(id);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
+                Console.WriteLine($"GetById hata: {ex.Message}");
+                return null; 
             }
         }
         [Authorize]
         [HttpPost]
-        public async Task<IActionResult> AddSikayet([FromBody] Sikayet model)
+        public async Task<Sikayet> Add([FromBody] Sikayet sikayet)
         {
             try
             {
-                var kullaniciIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
-                if (kullaniciIdClaim == null)
-                    return Unauthorized(new { message = "Kullanıcı doğrulanamadı." });
+                if (sikayet == null)
+                {
+                    Console.WriteLine("Add hata: Gönderilen şikayet bilgisi boş.");
+                    return null;
+                }
 
-                model.KullaniciId = int.Parse(kullaniciIdClaim.Value);
-                model.Durum = sikayetdurumu.Inceleniyor;
+                // Kullanıcı kimliği ataması istersen buraya ekleyebilirsin:
+                // var kullaniciIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+                // if (kullaniciIdClaim != null)
+                //     sikayet.KullaniciId = int.Parse(kullaniciIdClaim.Value);
 
-                var yeniSikayet = await _sikayetService.AddSikayet(model);
-                return CreatedAtAction(nameof(GetById), new { sikayetId = yeniSikayet.Id }, yeniSikayet);
+                return await _service.AddSikayet(sikayet);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
+                Console.WriteLine($"Add hata: {ex.Message}");
+                return null;
             }
         }
-
-        [HttpPut("cozuldu/{sikayetId}")]
-        public async Task<IActionResult> Cozuldu(int sikayetId, [FromQuery] int cozenBirimId)
+        [Authorize]
+        [HttpPut("{id}/{birimId}")]
+        public async Task<bool> UpdateDurum(int id, int birimId)
         {
             try
             {
-                var success = await _sikayetService.UpdateDurumAsCozuldu(sikayetId, cozenBirimId);
-                if (!success)
-                    return NotFound(new { message = "Şikayet bulunamadı." });
-
-                return NoContent();
+                return await _service.UpdateDurumAsCozuldu(id, birimId);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
+                Console.WriteLine($"UpdateDurum hata: {ex.Message}");
+                return false;
             }
         }
-        [HttpPut("dogrula/{sikayetId}")]
-        public async Task<IActionResult> IncrementDogrulama(int sikayetId)
+        [Authorize]
+        [HttpPut("{id}")]
+        public async Task<bool> IncrementDogrulama(int id)
         {
             try
             {
-                var success = await _sikayetService.IncrementDogrulama(sikayetId);
-                if (!success)
-                    return NotFound(new { message = "Şikayet bulunamadı." });
-
-                return NoContent();
+                return await _service.IncrementDogrulama(id);
             }
             catch (Exception ex)
             {
-                return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
+                Console.WriteLine($"IncrementDogrulama hata: {ex.Message}");
+                return false;
             }
         }
-
-
     }
 }
-

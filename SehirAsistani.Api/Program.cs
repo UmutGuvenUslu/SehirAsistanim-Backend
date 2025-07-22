@@ -27,6 +27,8 @@ builder.Services.AddCors(options =>
 });
 #endregion
 
+
+
 #region Enum Mapping + SQL Connection
 NpgsqlConnection.GlobalTypeMapper.MapEnum<rolturu>("rolturu");
 
