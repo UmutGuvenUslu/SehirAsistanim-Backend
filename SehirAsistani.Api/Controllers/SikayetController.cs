@@ -11,7 +11,7 @@ namespace SehirAsistani.Api.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-  
+
     public class SikayetController : ControllerBase
     {
         private readonly ISikayetService _service;
@@ -31,7 +31,7 @@ namespace SehirAsistani.Api.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"GetAll hata: {ex.Message}");
-                return new List<Sikayet>(); 
+                return new List<Sikayet>();
             }
         }
         [Authorize]
@@ -45,7 +45,7 @@ namespace SehirAsistani.Api.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"GetById hata: {ex.Message}");
-                return null; 
+                return null;
             }
         }
         [Authorize]
