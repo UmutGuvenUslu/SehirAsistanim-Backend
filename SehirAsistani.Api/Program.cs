@@ -67,7 +67,7 @@ builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
         {
             npgsqlOptions.UseNetTopologySuite(); // Harita desteği
             npgsqlOptions.MapEnum<rolturu>("rolturu");
-            npgsqlOptions.MapEnum<SikayetDurumu>("sikayetdurumu");
+            npgsqlOptions.MapEnum<sikayetdurumu>("sikayetdurumu");
         })
 );
 
