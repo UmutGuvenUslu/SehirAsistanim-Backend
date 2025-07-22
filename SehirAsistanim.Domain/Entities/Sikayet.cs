@@ -1,27 +1,44 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace SehirAsistanim.Domain.Entities
 {
     public class Sikayet : IEntitiy
     {
-     
+
         [Key]
+        [Column("id")]
         public int Id { get; set; }
+        [Column("kullaniciid")]
         public int KullaniciId { get; set; }
+        [Column("baslik")]
         public string Baslik { get; set; }
+        [Column("aciklama")]
         public string Aciklama { get; set; }
+        [Column("sikayetturuid")]
         public int SikayetTuruId { get; set; }
+        [Column("enlem")]
         public double Latitude { get; set; }
+        [Column("boylam")]
         public double Longitude { get; set; }
+        [Column("fotourl")]
         public string FotoUrl { get; set; }
+        [Column("gonderilmetarih")]
         public DateTime GonderilmeTarihi { get; set; } = DateTime.UtcNow;
+        [Column("cozulmetarihi")]
         public DateTime CozulmeTarihi { get; set; }
+        [Column("durum")]
         public sikayetdurumu Durum { get; set; }
+        [Column("dogrulanmasayi")]
         public int DogrulanmaSayisi { get; set; } = 1;
+        [Column("duygupuani")]
         public double DuyguPuani { get; set; } = 0.0;
+        [Column("silindimi")]
         public bool Silindimi { get; set; } = false;
+        [Column("cozenbirimid")]
         public int CozenBirimId { get; set; }
     }
 }
