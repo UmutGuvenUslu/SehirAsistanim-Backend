@@ -3,6 +3,7 @@ using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace SehirAsistanim.Domain.Entities
 {
@@ -42,12 +43,13 @@ namespace SehirAsistanim.Domain.Entities
         [Column("cozenbirimid")]
         public int? CozenBirimId { get; set; }
 
+        [JsonIgnore]
         public Kullanici Kullanici { get; set; }
 
-        
+        [JsonIgnore]
         public SikayetTuru SikayetTuru { get; set; }
 
-       
+        [JsonIgnore]
         public BelediyeBirimi? CozenBirim { get; set; }
     }
 }

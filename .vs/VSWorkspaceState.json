@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SehirAsistanim.Persistence",
+    "\\SehirAsistanim.Persistence\\Context"
   ],
+  "SelectedNode": "\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
   "PreviewInSolutionExplorer": false
 }
