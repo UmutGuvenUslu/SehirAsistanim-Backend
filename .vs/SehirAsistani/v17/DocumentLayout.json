@@ -86,8 +86,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Repositories\\GenericRepository.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAkwBcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T17:14:01.653Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T17:14:01.653Z"
             },
             {
               "$type": "Document",
@@ -99,8 +98,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "ViewState": "AgIAABYAAAAAAAAAAAAgwE8AAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:44:01.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T16:44:01.135Z"
             },
             {
               "$type": "Document",
@@ -124,8 +122,7 @@
               "RelativeToolTip": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "ViewState": "AgIAADUAAAAAAAAAAAAAAEsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:43:25.903Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T16:43:25.903Z"
             },
             {
               "$type": "Document",
@@ -183,7 +180,7 @@
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "RelativeToolTip": "SehirAsistanim.Domain\\Entities\\Sikayet.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAAwDMAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAACEAAAAAAAAAAAAuwDEAAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T16:27:33.756Z",
               "EditorCaption": ""

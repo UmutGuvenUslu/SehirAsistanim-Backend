@@ -43,13 +43,13 @@ namespace SehirAsistanim.Domain.Entities
         [Column("cozenbirimid")]
         public int? CozenBirimId { get; set; }
 
-        [JsonIgnore]
-        public Kullanici Kullanici { get; set; }
+        
+        public Kullanici? Kullanici { get; set; }
 
-        [JsonIgnore]
-        public SikayetTuru SikayetTuru { get; set; }
+        
+        public SikayetTuru? SikayetTuru { get; set; }
 
-        [JsonIgnore]
+        
         public BelediyeBirimi? CozenBirim { get; set; }
     }
 }
