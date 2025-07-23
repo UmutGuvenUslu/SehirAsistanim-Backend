@@ -44,30 +44,43 @@ public class ProfanityFilterMiddleware
             var body = await reader.ReadToEndAsync();
             context.Request.Body.Position = 0;
 
-            // Aciklama ve Baslik içindeki küfür kontrolü
             var json = JsonDocument.Parse(body);
 
-            if (json.RootElement.TryGetProperty("Aciklama", out var aciklama))
-            {
-                if (_bannedWords.Any(word => aciklama.ToString().ToLower().Contains(word)))
-                {
-                    context.Response.StatusCode = 400;
-                    await context.Response.WriteAsync("Açıklama alanında uygunsuz kelimeler tespit edildi.");
-                    return;
-                }
-            }
+            bool baslikKufurlu = false;
+            bool aciklamaKufurlu = false;
 
             if (json.RootElement.TryGetProperty("Baslik", out var baslik))
             {
-                if (_bannedWords.Any(word => baslik.ToString().ToLower().Contains(word)))
+                baslikKufurlu = _bannedWords.Any(word => baslik.ToString().ToLower().Contains(word));
+            }
+
+            if (json.RootElement.TryGetProperty("Aciklama", out var aciklama))
+            {
+                aciklamaKufurlu = _bannedWords.Any(word => aciklama.ToString().ToLower().Contains(word));
+            }
+
+            if (baslikKufurlu || aciklamaKufurlu)
+            {
+                context.Response.StatusCode = 400;
+
+                if (baslikKufurlu && aciklamaKufurlu)
                 {
-                    context.Response.StatusCode = 400;
-                    await context.Response.WriteAsync("Başlık alanında uygunsuz kelimeler tespit edildi.");
-                    return;
+                    await context.Response.WriteAsync("Başlık ve açıklama alanlarında uygunsuz kelimeler tespit edildi.");
                 }
+                else if (baslikKufurlu)
+                {
+                    await context.Response.WriteAsync("Başlık alanında uygunsuz kelimeler tespit edildi.");
+                }
+                else // aciklamaKufurlu
+                {
+                    await context.Response.WriteAsync("Açıklama alanında uygunsuz kelimeler tespit edildi.");
+                }
+
+                return;
             }
         }
 
         await _next(context);
     }
+
 }

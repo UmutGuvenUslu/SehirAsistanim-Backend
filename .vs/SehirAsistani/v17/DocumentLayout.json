@@ -46,8 +46,7 @@
               "RelativeToolTip": "SehirAsistani.Api\\Dockerfile",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAACQAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-07-23T10:59:23.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T10:59:23.5Z"
             },
             {
               "$type": "Document",
@@ -59,8 +58,7 @@
               "RelativeToolTip": "SehirAsistani.Api\\Program.cs",
               "ViewState": "AgIAAGEAAAAAAAAAAAAAAHgAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T10:35:28.385Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T10:35:28.385Z"
             },
             {
               "$type": "Document",
@@ -70,7 +68,7 @@
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Middlewares\\ProfanityFilterMiddleware.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Middlewares\\ProfanityFilterMiddleware.cs",
               "RelativeToolTip": "SehirAsistani.Api\\Middlewares\\ProfanityFilterMiddleware.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABHAAAAAAAAAA==",
+              "ViewState": "AgIAADMAAAAAAAAAAAAowE8AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T10:34:25.124Z",
               "EditorCaption": ""
