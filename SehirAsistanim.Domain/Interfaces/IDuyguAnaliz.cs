@@ -8,6 +8,6 @@ namespace SehirAsistanim.Domain.Interfaces
 {
     public interface IDuyguAnaliz
     {
-        int HesaplaDuyguPuani(string metin);
+        Task<int> HesaplaDuyguPuani(string metin);
     }
 }

@@ -124,14 +124,14 @@ namespace SehirAsistanim.Infrastructure.Services
         #endregion
 
         #region Duygu Puanı Hesaplama
-        public int HesaplaDuyguPuani(string metin)
+        public async Task<int> HesaplaDuyguPuani(string metin)
         {
             int puan = 0;
             foreach (var kelime in Sozluk)
                 if (metin.Contains(kelime.Key, StringComparison.OrdinalIgnoreCase))
                     puan += kelime.Value;
 
-            return puan;
+            return  puan;
         }
         #endregion
 

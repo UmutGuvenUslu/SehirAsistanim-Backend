@@ -45,9 +45,9 @@ namespace SehirAsistanim.Infrastructure.UnitOfWork
         #endregion
 
         #region Dispose
-        public void Dispose()
+        public async ValueTask Dispose()
         {
-            _context.Dispose();
+             _context.DisposeAsync();
         }
 
         #endregion

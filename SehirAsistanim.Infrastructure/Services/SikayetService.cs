@@ -71,7 +71,7 @@ namespace SehirAsistanim.Infrastructure.Services
         #region AddSikayet
         public async Task<Sikayet> AddSikayet(Sikayet sikayet)
         {
-            sikayet.DuyguPuani = _duyguAnalizService.HesaplaDuyguPuani(sikayet.Aciklama);
+            sikayet.DuyguPuani = await _duyguAnalizService.HesaplaDuyguPuani(sikayet.Aciklama);
             await _unitOfWork.Repository<Sikayet>().Add(sikayet);
             await _unitOfWork.Commit();
             return sikayet;
