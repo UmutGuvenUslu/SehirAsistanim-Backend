@@ -2904,23 +2904,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Buse\\.nuget\\packages\\": {},
+    "C:\\Users\\umutg\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
       "projectName": "SehirAsistanim.Infrastructure",
-      "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
-      "packagesPath": "C:\\Users\\Buse\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\obj\\",
+      "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
+      "packagesPath": "C:\\Users\\umutg\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Buse\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\umutg\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2936,11 +2936,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
-              "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj"
+            "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
+              "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj"
             },
-            "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {
-              "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj"
+            "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {
+              "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj"
             }
           }
         }
@@ -2955,7 +2955,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.200"
     },
     "frameworks": {
       "net8.0": {
@@ -3010,7 +3010,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

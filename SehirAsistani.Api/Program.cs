@@ -70,12 +70,12 @@ builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
 
 #region Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<KullaniciService>();
+builder.Services.AddScoped<IKullaniciService,KullaniciService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
 builder.Services.AddScoped<ISmtpService, SmtpService>();
-builder.Services.AddScoped<IDuyguAnaliz, DuyguAnalizService>(); 
+builder.Services.AddScoped<IDuyguAnaliz, DuyguAnalizService>();
 builder.Services.AddScoped<ISikayetService, SikayetService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<EmailService>();
@@ -117,6 +117,10 @@ app.UseHttpsRedirection();
 app.UseRouting();
 
 app.UseCors("AllowAll");
+
+
+app.UseMiddleware<ProfanityFilterMiddleware>();
+
 
 app.UseAuthentication();
 
