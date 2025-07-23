@@ -10,7 +10,7 @@ using SehirAsistanim.Infrastructure.Repositories;
 
 namespace SehirAsistanim.Infrastructure.UnitOfWork
 {
-    public class UnitOfWork : IUnitOfWork, IDisposable
+    public class UnitOfWork : IUnitOfWork, IAsyncDisposable
     {
         private readonly SehirAsistaniDbContext _context;
 
@@ -45,7 +45,7 @@ namespace SehirAsistanim.Infrastructure.UnitOfWork
         #endregion
 
         #region Dispose
-        public async ValueTask Dispose()
+        public async ValueTask DisposeAsync()
         {
              _context.DisposeAsync();
         }
