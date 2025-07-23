@@ -4,6 +4,7 @@ using SehirAsistanim.Domain.Interfaces;
 
 namespace SehirAsistanim.Domain.Entities
 {
+    [Table("belediyebirimleri")]
     public class BelediyeBirimi :IEntitiy
     {
         [Key]
