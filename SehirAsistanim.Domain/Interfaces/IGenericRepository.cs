@@ -8,6 +8,6 @@
         Task Update(T entity);
         Task Delete(int id);
         Task<bool> Exists(int id);
-        
+        IQueryable<T> GetQueryable();
     }
 }

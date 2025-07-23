@@ -71,6 +71,8 @@ builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
 #region Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IKullaniciService,KullaniciService>();
+builder.Services.AddScoped<ISikayetTuruService, SikayetTuruService>();
+builder.Services.AddScoped<IBelediyeBirimiService, BelediyeBirimiService>();
 builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));

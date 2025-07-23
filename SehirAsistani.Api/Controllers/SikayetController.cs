@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using SehirAsistanim.Domain.Interfaces;
+using SehirAsistanim.Domain.Dto_s;
 
 namespace SehirAsistani.Api.Controllers
 {
@@ -22,7 +23,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Sikayet>> GetAll()
+        public async Task<List<SikayetDetayDto>> GetAll()
         {
             try
             {
@@ -31,7 +32,7 @@ namespace SehirAsistani.Api.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"GetAll hata: {ex.Message}");
-                return new List<Sikayet>();
+                return new List<SikayetDetayDto>();
             }
         }
         [Authorize]

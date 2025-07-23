@@ -13,6 +13,11 @@ namespace SehirAsistanim.Infrastructure.Repositories
         public readonly DbContext _context;
         public readonly DbSet<T> _dbSet;
 
+       public IQueryable<T> GetQueryable()
+    {
+        return _context.Set<T>().AsQueryable();
+    }
+
         public GenericRepository(DbContext dbContext)
         {
             _context = dbContext;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using SehirAsistanim.Domain.Dto_s;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
@@ -13,28 +15,60 @@ namespace SehirAsistanim.Infrastructure.Services
     public class SikayetService : ISikayetService
     {
         private readonly IUnitOfWork _unitOfWork;
-        private readonly JwtService _jwtService;
         private readonly IDuyguAnaliz _duyguAnalizService;
 
-        public SikayetService(IUnitOfWork unitOfWork, IDuyguAnaliz duyguAnaliz, JwtService jwtService)
+        public SikayetService(IUnitOfWork unitOfWork, IDuyguAnaliz duyguAnaliz)
         {
             _unitOfWork = unitOfWork;
-            _jwtService = jwtService;
             _duyguAnalizService = duyguAnaliz;
         }
 
-        public async Task<List<Sikayet>> GetAll()
+        #region GetAll
+        public async Task<List<SikayetDetayDto>> GetAll()
         {
-            // Burada await kullan, .Result veya .Wait() kullanma
-            var all = await _unitOfWork.Repository<Sikayet>().GetAll();
-            return all.ToList();
-        }
+            var query = _unitOfWork.Repository<Sikayet>()
+                .GetQueryable()
+                .Include(s => s.Kullanici)
+                .Include(s => s.SikayetTuru)
+                .Include(s => s.CozenBirim);
 
+            var list = await query.Select(s => new SikayetDetayDto
+            {
+                Id = s.Id,
+                Baslik = s.Baslik,
+                Aciklama = s.Aciklama,
+                Latitude = s.Latitude,
+                Longitude = s.Longitude,
+                FotoUrl = s.FotoUrl,
+                GonderilmeTarihi = s.GonderilmeTarihi,
+                CozulmeTarihi = s.CozulmeTarihi,
+                Durum = (int)s.Durum,
+                DogrulanmaSayisi = s.DogrulanmaSayisi,
+                Silindimi = s.Silindimi,
+
+                KullaniciId = s.KullaniciId,
+                KullaniciAdi = s.Kullanici.Isim + " " + s.Kullanici.Soyisim,
+                KullaniciEmail = s.Kullanici.Email,
+
+                SikayetTuruId = s.SikayetTuruId,
+                SikayetTuruAdi = s.SikayetTuru.Ad,
+
+                CozenBirimId = s.CozenBirimId,
+                CozenBirimAdi = s.CozenBirim != null ? s.CozenBirim.BirimAdi : null
+            }).ToListAsync();
+
+            return list;
+        }
+        #endregion
+
+        #region GetById
         public async Task<Sikayet> GetById(int sikayetId)
         {
             return await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
         }
+        #endregion
 
+        #region AddSikayet
         public async Task<Sikayet> AddSikayet(Sikayet sikayet)
         {
             sikayet.DuyguPuani = _duyguAnalizService.HesaplaDuyguPuani(sikayet.Aciklama);
@@ -42,13 +76,15 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Commit();
             return sikayet;
         }
+        #endregion
 
+        #region UpdateDurumAsCozuldu
         public async Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId)
         {
             var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
             if (sikayet == null) return false;
 
-            sikayet.Durum = Domain.Enums.sikayetdurumu.Cozuldu;
+            sikayet.Durum = sikayetdurumu.Cozuldu;
             sikayet.CozulmeTarihi = DateTime.UtcNow;
             sikayet.CozenBirimId = cozenBirimId;
 
@@ -56,8 +92,9 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Commit();
             return true;
         }
+        #endregion
 
-        // SoftDelete yorum olarak bırakılmış, gerektiğinde açabilirsin
+        //#region SoftDelete (İstendiğinde açılabilir)
         //public async Task<bool> SoftDelete(int sikayetId)
         //{
         //    var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
@@ -70,7 +107,9 @@ namespace SehirAsistanim.Infrastructure.Services
 
         //    return true;
         //}
+        //#endregion
 
+        #region IncrementDogrulama
         public async Task<bool> IncrementDogrulama(int sikayetId)
         {
             var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
@@ -81,6 +120,7 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Commit();
             return true;
         }
+        #endregion
 
         #region TotalSikayet
         public async Task<int> TotalSikayetSayisi()
