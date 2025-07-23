@@ -16,7 +16,7 @@ namespace SehirAsistanim.Domain.Dto_s
         public string FotoUrl { get; set; }
         public DateTime GonderilmeTarihi { get; set; }
         public DateTime? CozulmeTarihi { get; set; }
-        public int Durum { get; set; }
+        public string Durum { get; set; }
         public int DogrulanmaSayisi { get; set; }
         public bool Silindimi { get; set; }
 

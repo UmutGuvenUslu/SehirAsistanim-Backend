@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {}
+    "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
+    "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
         "projectName": "SehirAsistanim.Domain",
-        "projectPath": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+        "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
         "packagesPath": "C:\\Users\\Buse\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\obj\\",
         "projectStyle": "PackageReference",
