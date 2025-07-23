@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\interfaces\\iunitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.infrastructure\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\unitofwork\\unitofwork.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -127,40 +131,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UnitofWork.cs",
-              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
-              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
-              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
-              "RelativeToolTip": "SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwDEAAAAlAAAAAAAAAA==",
+              "Title": "IUnitofWork.cs",
+              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IUnitofWork.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\IUnitofWork.cs",
+              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IUnitofWork.cs",
+              "RelativeToolTip": "SehirAsistanim.Domain\\Interfaces\\IUnitofWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:05:58.304Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "KullaniciService.cs",
-              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
-              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
-              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
-              "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
-              "ViewState": "AgIAADQAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:05:07.904Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "IDuyguAnaliz.cs",
-              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
-              "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
-              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
-              "RelativeToolTip": "SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:04:25.37Z",
+              "WhenOpened": "2025-07-23T16:09:58.139Z",
               "EditorCaption": ""
             },
             {
@@ -174,6 +152,43 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UnitofWork.cs",
+              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
+              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
+              "RelativeToolTip": "SehirAsistanim.Infrastructure\\UnitOfWork\\UnitofWork.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T16:05:58.304Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "KullaniciService.cs",
+              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
+              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
+              "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
+              "ViewState": "AgIAADQAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T16:05:07.904Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IDuyguAnaliz.cs",
+              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
+              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
+              "RelativeToolTip": "SehirAsistanim.Domain\\Interfaces\\IDuyguAnaliz.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T16:04:25.37Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "DuyguAnalizService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\DuyguAnalizService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\DuyguAnalizService.cs",
@@ -181,12 +196,11 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\DuyguAnalizService.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAH4AAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:03:28.013Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T16:03:28.013Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "SikayetDogrulama.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
@@ -198,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "SikayetLog.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetLog.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetLog.cs",
@@ -210,7 +224,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "SmtpSettings.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SmtpSettings.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SmtpSettings.cs",
@@ -222,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "SikayetDurumu.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Enums\\SikayetDurumu.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Enums\\SikayetDurumu.cs",
@@ -234,7 +248,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "GenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Repositories\\GenericRepository.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Repositories\\GenericRepository.cs",
@@ -246,7 +260,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IGenericRepository.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IGenericRepository.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\IGenericRepository.cs",
@@ -258,7 +272,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "ISikayetService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\ISikayetService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\ISikayetService.cs",
@@ -270,7 +284,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "SikayetDetayDto.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
@@ -282,7 +296,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "Kullanici.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Kullanici.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\Kullanici.cs",
@@ -294,7 +308,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "SikayetService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
@@ -302,12 +316,11 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "ViewState": "AgIAAHIAAAAAAAAAAAAkwHwAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T15:21:05.869Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T15:21:05.869Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Sikayet.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\Sikayet.cs",
@@ -319,7 +332,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "SikayetController.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
@@ -327,12 +340,11 @@
               "RelativeToolTip": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwB8AAAAgAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T15:19:58.157Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T15:19:58.157Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\AuthController.cs",
@@ -344,7 +356,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "KullaniciController.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\KullaniciController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\KullaniciController.cs",
@@ -356,7 +368,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "RolTuru.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Enums\\RolTuru.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Enums\\RolTuru.cs",
@@ -368,7 +380,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "BelediyeBirimiController.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\BelediyeBirimiController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\BelediyeBirimiController.cs",
@@ -380,7 +392,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "BelediyeBirimiService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\BelediyeBirimiService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\BelediyeBirimiService.cs",
@@ -392,7 +404,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "IBelediyeBirimiService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\IBelediyeBirimiService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\IBelediyeBirimiService.cs",
@@ -404,7 +416,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "BelediyeBirimi.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\BelediyeBirimi.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\BelediyeBirimi.cs",
@@ -416,7 +428,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "SikayetTuru.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetTuru.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetTuru.cs",
@@ -428,7 +440,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "SikayetTuruController.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetTuruController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetTuruController.cs",
@@ -440,7 +452,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ISikayetTuruService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\ISikayetTuruService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\ISikayetTuruService.cs",
@@ -452,7 +464,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "SikayetTuruService.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetTuruService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetTuruService.cs",
@@ -464,7 +476,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Program.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Program.cs",
