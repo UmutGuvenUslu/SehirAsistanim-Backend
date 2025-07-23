@@ -10,9 +10,9 @@ public class ProfanityFilterMiddleware
     {
         _next = next;
 
-        // 📁 Kendi klasörünü baz alarak yol oluştur
-        var currentDirectory = Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location);
-        var filePath = Path.Combine(currentDirectory, "kotusoz.txt");
+        var currentDirectory = Directory.GetCurrentDirectory(); // /app
+        var filePath = Path.Combine(currentDirectory, "Middlewares", "kotusoz.txt");
+
 
         // 🔁 Dosyayı oku
         if (File.Exists(filePath))

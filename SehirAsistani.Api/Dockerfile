@@ -9,13 +9,13 @@ COPY ["SehirAsistanim.Domain/SehirAsistanim.Domain.csproj", "SehirAsistanim.Doma
 COPY ["SehirAsistanim.Infrastructure/SehirAsistanim.Infrastructure.csproj", "SehirAsistanim.Infrastructure/"]
 COPY ["SehirAsistanim.Persistence/SehirAsistanim.Persistence.csproj", "SehirAsistanim.Persistence/"]
 
-# Gerekli bağımlılıkları yükle
+# Bağımlılıkları yükle
 RUN dotnet restore "SehirAsistani.Api/SehirAsistani.Api.csproj"
 
 # Tüm kaynakları kopyala
 COPY . .
 
-# Build
+# Build işlemi
 WORKDIR "/src/SehirAsistani.Api"
 RUN dotnet build "SehirAsistani.Api.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
@@ -27,5 +27,11 @@ RUN dotnet publish "SehirAsistani.Api.csproj" -c $BUILD_CONFIGURATION -o /app/pu
 # Final aşama (çalışma aşaması)
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
+
+# Publish edilen dosyaları kopyala
 COPY --from=publish /app/publish .
+
+# kotusoz.txt dosyasını da kopyala (middleware ile aynı klasör)
+COPY SehirAsistani.Api/Middlewares/kotusoz.txt ./Middlewares/kotusoz.txt
+
 ENTRYPOINT ["dotnet", "SehirAsistani.Api.dll"]

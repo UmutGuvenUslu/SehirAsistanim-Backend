@@ -118,6 +118,7 @@ app.UseRouting();
 
 app.UseCors("AllowAll");
 
+
 app.UseMiddleware<ProfanityFilterMiddleware>();
 
 
