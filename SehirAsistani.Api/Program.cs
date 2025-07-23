@@ -75,7 +75,7 @@ builder.Services.AddScoped<AuthService>();
 builder.Services.AddScoped<IAuthService, AuthService>();
 builder.Services.Configure<SmtpSettings>(builder.Configuration.GetSection("Smtp"));
 builder.Services.AddScoped<ISmtpService, SmtpService>();
-builder.Services.AddScoped<IDuyguAnaliz, DuyguAnalizService>();
+builder.Services.AddScoped<IDuyguAnaliz, DuyguAnalizService>(); 
 builder.Services.AddScoped<ISikayetService, SikayetService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<EmailService>();

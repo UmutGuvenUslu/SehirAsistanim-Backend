@@ -127,12 +127,25 @@ namespace SehirAsistanim.Infrastructure.Services
         }
         #endregion
 
-        #region KullaniciTCVarMi
+        #region TCAnaliz
 
-        public async Task<bool> IsPhoneRegistered(string phone)
+        public async Task<bool> TcAnaliz(string tc)
         {
-            var kullanici = await _unitOfWork.Repository<Kullanici>().GetAll();
-            return kullanici.Any(k => k.TC == phone);
+            if (string.IsNullOrWhiteSpace(tc) || tc.Length != 11 || !tc.All(char.IsDigit))
+                return false;
+
+            if (tc.StartsWith("0"))
+                return false;
+
+            int[] digits = tc.Select(c => int.Parse(c.ToString())).ToArray();
+
+            int oddSum = digits[0] + digits[2] + digits[4] + digits[6] + digits[8];
+            int evenSum = digits[1] + digits[3] + digits[5] + digits[7];
+
+            int digit10 = ((oddSum * 7) - evenSum) % 10;
+            int digit11 = digits.Take(10).Sum() % 10;
+
+            return digit10 == digits[9] && digit11 == digits[10];
         }
 
         #endregion

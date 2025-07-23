@@ -4,7 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using SehirAsistanim.Domain.Entities;
+using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
+using SehirAsistanim.Infrastructure.UnitOfWork;
 
 namespace SehirAsistanim.Infrastructure.Services
 {
@@ -79,5 +81,29 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Commit();
             return true;
         }
+
+        #region TotalSikayet
+        public async Task<int> TotalSikayetSayisi()
+        {
+            var allComplaint = await _unitOfWork.Repository<Sikayet>().GetAll();
+            return allComplaint.Count();
+        }
+        #endregion
+
+        #region CozulenSikayetler
+        public async Task<int> CozulenSikayetSayisi()
+        {
+            var sikayetler = await _unitOfWork.Repository<Sikayet>().GetAll();
+            return sikayetler.Count(s => s.Durum == sikayetdurumu.Cozuldu);
+        }
+        #endregion
+
+        #region BekleyenSikayetler
+        public async Task<int> BekleyenSikayetSayisi()
+        {
+            var sikayetler = await _unitOfWork.Repository<Sikayet>().GetAll();
+            return sikayetler.Count(s => s.Durum == sikayetdurumu.Inceleniyor);
+        }
+        #endregion
     }
 }

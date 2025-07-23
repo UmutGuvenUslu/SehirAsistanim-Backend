@@ -21,6 +21,7 @@ namespace SehirAsistani.Api.Controllers
             _service = service;
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<List<Sikayet>> GetAll()
         {
@@ -99,6 +100,51 @@ namespace SehirAsistani.Api.Controllers
             {
                 Console.WriteLine($"IncrementDogrulama hata: {ex.Message}");
                 return false;
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<int> TotalSikayetSayisi()
+        {
+            try
+            {
+                return await _service.TotalSikayetSayisi();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"TotalSikayetSayisi hata: {ex.Message}");
+                return 0;
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<int> CozulenSikayetSayisi()
+        {
+            try
+            {
+                return await _service.CozulenSikayetSayisi();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"CozulenSikayetSayisi hata: {ex.Message}");
+                return 0;
+            }
+        }
+
+        [Authorize]
+        [HttpGet]
+        public async Task<int> BekleyenSikayetSayisi()
+        {
+            try
+            {
+                return await _service.BekleyenSikayetSayisi();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"BekleyenSikayetSayisi hata: {ex.Message}");
+                return 0;
             }
         }
     }

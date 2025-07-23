@@ -19,6 +19,9 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId);
         //Task<bool> SoftDelete(int sikayetId);
         Task<bool> IncrementDogrulama(int sikayetId);
+        Task<int> TotalSikayetSayisi();
+        Task<int> CozulenSikayetSayisi();
+        Task<int> BekleyenSikayetSayisi();
 
     }
 }
