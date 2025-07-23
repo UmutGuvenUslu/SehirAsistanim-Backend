@@ -71,17 +71,13 @@ public class AuthController : ControllerBase
     #endregion
 
     #region KullaniciTCVarMi
-    [HttpGet("IsTCRegistered")]
-    public async Task<IActionResult> IsTCRegistered([FromQuery] string tc)
+    public async Task<bool> TcAnaliz([FromQuery] string tc)
     {
-        if (string.IsNullOrWhiteSpace(tc))
-            return BadRequest("TC boş olamaz.");
+        return await _authService.TcAnaliz(tc);
 
-        var result = await _authService.IsPhoneRegistered(tc);
-        return Ok(new { tcVar = result });
     }
-    #endregion
+        #endregion
 
 
 
-}
+    }
