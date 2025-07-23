@@ -45,6 +45,7 @@ namespace SehirAsistanim.Infrastructure.Services
                 Durum = s.Durum.ToString(),
                 DogrulanmaSayisi = s.DogrulanmaSayisi,
                 Silindimi = s.Silindimi,
+                DuyguPuani = s.DuyguPuani,
 
                 KullaniciId = s.KullaniciId,
                 KullaniciAdi = s.Kullanici.Isim + " " + s.Kullanici.Soyisim,

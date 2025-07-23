@@ -18,6 +18,8 @@ namespace SehirAsistanim.Domain.Dto_s
         public DateTime? CozulmeTarihi { get; set; }
         public string Durum { get; set; }
         public int DogrulanmaSayisi { get; set; }
+
+        public double DuyguPuani { get; set; } = 0.0;
         public bool Silindimi { get; set; }
 
         // Kullanıcı Bilgileri

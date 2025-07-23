@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.domain\\dto\u0027s\\sikayetdetaydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\dto\u0027s\\sikayetdetaydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistani.api\\controllers\\sikayetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|solutionrelative:sehirasistani.api\\controllers\\sikayetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.domain\\enums\\sikayetdurumu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\enums\\sikayetdurumu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistani.api\\controllers\\sikayetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|solutionrelative:sehirasistani.api\\controllers\\sikayetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.domain\\dto\u0027s\\sikayetdetaydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\dto\u0027s\\sikayetdetaydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\buse\\source\\repos\\sehirasistanim-backend\\sehirasistanim.domain\\entities\\sikayetlog.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,34 +62,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SikayetDetayDto.cs",
-              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
-              "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
-              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
-              "RelativeToolTip": "SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAwAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:45:12.636Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "SikayetService.cs",
-              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
-              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
-              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
-              "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACgAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:44:01.135Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
@@ -97,6 +71,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SikayetDetayDto.cs",
+              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
+              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
+              "RelativeToolTip": "SehirAsistanim.Domain\\Dto\u0027s\\SikayetDetayDto.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAwAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T16:45:12.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SikayetService.cs",
+              "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-23T16:44:01.135Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -113,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SikayetController.cs",
               "DocumentMoniker": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
@@ -158,8 +158,7 @@
               "RelativeToolTip": "SehirAsistanim.Domain\\Entities\\SikayetLog.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAoAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:27:39.136Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T16:27:39.136Z"
             },
             {
               "$type": "Document",
