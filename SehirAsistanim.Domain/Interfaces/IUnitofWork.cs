@@ -4,6 +4,8 @@
     {
         IGenericRepository<T> Repository<T>() where T : class, IEntitiy;
 
+        Task CommitAsync();
+
         ValueTask DisposeAsync();
     }
 }

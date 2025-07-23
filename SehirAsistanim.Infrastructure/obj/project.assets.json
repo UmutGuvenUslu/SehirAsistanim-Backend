@@ -2910,9 +2910,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
       "projectName": "SehirAsistanim.Infrastructure",
-      "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
+      "projectPath": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj",
       "packagesPath": "C:\\Users\\Buse\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\obj\\",
       "projectStyle": "PackageReference",
@@ -2936,11 +2936,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
-              "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj"
+            "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
+              "projectPath": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj"
             },
-            "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {
-              "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj"
+            "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {
+              "projectPath": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj"
             }
           }
         }

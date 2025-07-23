@@ -29,11 +29,11 @@ namespace SehirAsistanim.Infrastructure.UnitOfWork
 
 
         #region Commit
-        public async Task<int> Commit()
+        public async Task CommitAsync()
         {
             try
             {
-                return await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
             }
             catch (Exception ex)
             {
