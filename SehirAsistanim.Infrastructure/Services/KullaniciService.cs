@@ -79,7 +79,7 @@ namespace SehirAsistanim.Infrastructure.Services
         //}
         //#endregion
 
-        #region
+        #region TotalKullaniciSayisi
         public async Task<int> TotalKullaniciSayisi()
         {
             var allUsers = await _unitofWork.Repository<Kullanici>().GetAll();

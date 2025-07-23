@@ -114,7 +114,10 @@ namespace SehirAsistani.Api.Controllers
                 return 0;
             }
         }
-        #endregion
+        #endregion GetAll Kullanici
+
+
+     
 
     }
 }
