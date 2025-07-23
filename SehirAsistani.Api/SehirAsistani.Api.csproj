@@ -29,4 +29,10 @@
     <ProjectReference Include="..\SehirAsistanim.Persistence\SehirAsistanim.Persistence.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Middlewares\kotusoz.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
