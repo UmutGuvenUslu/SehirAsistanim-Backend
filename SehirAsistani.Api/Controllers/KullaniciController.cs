@@ -33,7 +33,24 @@ namespace SehirAsistani.Api.Controllers
                 return data;
             }
         }
-        #endregion
+        #endregion GetAll Kullanici
+
+
+        #region GetById Kullanici
+
+        #endregion GetById Kullanici
+
+        #region Add Kullanici
+
+        #endregion Add Kullanici
+
+        #region Delete Kullanici
+
+        #endregion Delete Kullanici
+
+        #region Update Kullanici
+
+        #endregion Update Kullanici
 
     }
 }
