@@ -21,7 +21,6 @@ namespace SehirAsistani.Api.Controllers
             _service = service;
         }
 
-        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<List<Sikayet>> GetAll()
         {
