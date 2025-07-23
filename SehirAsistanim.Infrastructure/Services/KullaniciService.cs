@@ -37,7 +37,7 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<Kullanici> AddKullanici(Kullanici kullanici)
         {
             await _unitofWork.Repository<Kullanici>().Add(kullanici);
-            await _unitofWork.Commit();
+            await _unitofWork.CommitAsync();
             return kullanici;
         }
         #endregion
@@ -46,7 +46,7 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<Kullanici> UpdateKullanici(Kullanici kullanici)
         {
             _unitofWork.Repository<Kullanici>().Update(kullanici);
-            await _unitofWork.Commit();
+            await _unitofWork.CommitAsync();
             return kullanici;
         }
         #endregion
@@ -59,7 +59,7 @@ namespace SehirAsistanim.Infrastructure.Services
                 return false;
 
             _unitofWork.Repository<Kullanici>().Delete(kullanici.Id);
-            await _unitofWork.Commit();
+            await _unitofWork.CommitAsync();
             return true;
         }
         #endregion

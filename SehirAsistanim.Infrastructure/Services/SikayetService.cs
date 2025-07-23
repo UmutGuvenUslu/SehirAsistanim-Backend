@@ -73,7 +73,7 @@ namespace SehirAsistanim.Infrastructure.Services
         {
             sikayet.DuyguPuani = await _duyguAnalizService.HesaplaDuyguPuani(sikayet.Aciklama);
             await _unitOfWork.Repository<Sikayet>().Add(sikayet);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return sikayet;
         }
         #endregion
@@ -89,7 +89,7 @@ namespace SehirAsistanim.Infrastructure.Services
             sikayet.CozenBirimId = cozenBirimId;
 
             await _unitOfWork.Repository<Sikayet>().Update(sikayet);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return true;
         }
         #endregion
@@ -117,7 +117,7 @@ namespace SehirAsistanim.Infrastructure.Services
 
             sikayet.DogrulanmaSayisi++;
             await _unitOfWork.Repository<Sikayet>().Update(sikayet);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return true;
         }
         #endregion

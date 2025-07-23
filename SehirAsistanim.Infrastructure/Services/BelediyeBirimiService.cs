@@ -36,7 +36,7 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<BelediyeBirimi> AddBelediyeBirimi(BelediyeBirimi belediyeBirimi)
         {
             await _unitOfWork.Repository<BelediyeBirimi>().Add(belediyeBirimi);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return belediyeBirimi;
         }
         #endregion
@@ -45,7 +45,7 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<BelediyeBirimi> UpdateBelediyeBirimi(BelediyeBirimi belediyeBirimi)
         {
             _unitOfWork.Repository<BelediyeBirimi>().Update(belediyeBirimi);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return belediyeBirimi;
         }
         #endregion
@@ -58,7 +58,7 @@ namespace SehirAsistanim.Infrastructure.Services
                 return false;
 
             _unitOfWork.Repository<BelediyeBirimi>().Delete(belediyeBirimi.Id);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return true;
         }
         #endregion

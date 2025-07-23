@@ -82,7 +82,7 @@ namespace SehirAsistanim.Infrastructure.Services
             };
 
             await _unitOfWork.Repository<Kullanici>().Add(kullanici);
-            _unitOfWork.Commit();
+            _unitOfWork.CommitAsync();
 
             var token = await GenerateJwtToken(kullanici);
 

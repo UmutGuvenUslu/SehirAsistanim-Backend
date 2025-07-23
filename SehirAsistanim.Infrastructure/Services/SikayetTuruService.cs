@@ -34,7 +34,7 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<SikayetTuru> AddSikayetTuru(SikayetTuru sikayetTuru)
         {
             await _unitOfWork.Repository<SikayetTuru>().Add(sikayetTuru);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return sikayetTuru;
         }
         #endregion
@@ -43,7 +43,7 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<SikayetTuru> UpdateSikayetTuru(SikayetTuru sikayetTuru)
         {
             _unitOfWork.Repository<SikayetTuru>().Update(sikayetTuru);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return sikayetTuru;
         }
         #endregion
@@ -56,7 +56,7 @@ namespace SehirAsistanim.Infrastructure.Services
                 return false;
 
             _unitOfWork.Repository<SikayetTuru>().Delete(sikayetTuru.Id);
-            await _unitOfWork.Commit();
+            await _unitOfWork.CommitAsync();
             return true;
         }
         #endregion
