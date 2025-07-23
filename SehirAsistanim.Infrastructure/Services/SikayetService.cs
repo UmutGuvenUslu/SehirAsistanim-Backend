@@ -42,7 +42,7 @@ namespace SehirAsistanim.Infrastructure.Services
                 FotoUrl = s.FotoUrl,
                 GonderilmeTarihi = s.GonderilmeTarihi,
                 CozulmeTarihi = s.CozulmeTarihi,
-                Durum = s.Durum,
+                Durum = s.Durum.ToString(),
                 DogrulanmaSayisi = s.DogrulanmaSayisi,
                 Silindimi = s.Silindimi,
 
