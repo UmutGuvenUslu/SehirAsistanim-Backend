@@ -69,7 +69,7 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.AddBelediyeBirimi(belediyeBirimi);
+                return await _service.UpdateBelediyeBirimi(belediyeBirimi);
             }
             catch (Exception ex)
             {
