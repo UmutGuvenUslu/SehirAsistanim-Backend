@@ -74,7 +74,7 @@ namespace SehirAsistani.Api.Controllers
                 return null;
             }
         }
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut]
         public async Task<bool> Update([FromBody] Sikayet sikayet)
         {
@@ -89,7 +89,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}/{birimId}")]
         public async Task<bool> UpdateDurum(int id, int birimId)
         {
@@ -118,7 +118,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<int> TotalSikayetSayisi()
         {
@@ -133,7 +133,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<int> CozulenSikayetSayisi()
         {
@@ -148,7 +148,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<int> BekleyenSikayetSayisi()
         {
@@ -163,7 +163,7 @@ namespace SehirAsistani.Api.Controllers
             }
         }
 
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<bool> Delete(int id)
         {
@@ -177,7 +177,7 @@ namespace SehirAsistani.Api.Controllers
                 return false;
             }
         }
-        //[Authorize]
+        [Authorize]
         [HttpGet]
         public async Task<List<SikayetDetayDto>> GetAllByUser([FromQuery] int userId)
         {
