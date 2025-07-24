@@ -1,15 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\SehirAsistani.Api",
-    "\\SehirAsistani.Api\\Controllers",
-    "\\SehirAsistanim.Domain",
-    "\\SehirAsistanim.Domain\\Entities",
-    "\\SehirAsistanim.Domain\\Interfaces",
-    "\\SehirAsistanim.Infrastructure",
-    "\\SehirAsistanim.Infrastructure\\Services",
-    "\\SehirAsistanim.Persistence\\Context"
+    ""
   ],
-  "SelectedNode": "\\SehirAsistanim.Infrastructure\\Services\\KullaniciService.cs",
   "PreviewInSolutionExplorer": false
 }

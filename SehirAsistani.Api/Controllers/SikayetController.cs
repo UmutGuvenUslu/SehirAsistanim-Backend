@@ -178,6 +178,25 @@ namespace SehirAsistani.Api.Controllers
             }
         }
 
+        [Authorize]
+        [HttpGet("GetAllByUser")]
+        public async Task<List<Sikayet>> GetAllByUser([FromQuery] int userId)
+        {
+            try
+            {
+                if (userId <= 0)
+                    return new List<Sikayet>();
+
+                var complaints = await _service.GetAllByUser(userId);
+                return complaints ?? new List<Sikayet>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"GetAllByUser hata: {ex.Message}");
+                return new List<Sikayet>(); 
+            }
+        }
+
     }
 
 

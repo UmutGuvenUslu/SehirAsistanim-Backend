@@ -2781,25 +2781,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\elif_\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\Buse\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+      "projectUniqueName": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
       "projectName": "SehirAsistanim.Domain",
-      "projectPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
-      "packagesPath": "C:\\Users\\elif_\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\obj\\",
+      "projectPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+      "packagesPath": "C:\\Users\\Buse\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Buse\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\elif_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Buse\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -2826,7 +2824,8 @@
         "enableAudit": "true",
         "auditLevel": "low",
         "auditMode": "direct"
-      }
+      },
+      "SdkAnalysisLevel": "9.0.100"
     },
     "frameworks": {
       "net8.0": {
@@ -2873,7 +2872,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

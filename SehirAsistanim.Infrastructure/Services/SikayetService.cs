@@ -131,6 +131,38 @@ namespace SehirAsistanim.Infrastructure.Services
         }
         #endregion
 
+        #region UpdateSikayet
+        public async Task<bool> UpdateSikayet(Sikayet updated)
+        {
+            var updateSikayet = _unitOfWork.Repository<Sikayet>().GetById(updated.Id).Result;
+            if (updateSikayet == null) return false;
+
+            updateSikayet.Baslik = updated.Baslik;
+            updateSikayet.Aciklama = updated.Aciklama;
+            updateSikayet.FotoUrl = updated.FotoUrl;
+            updateSikayet.Latitude = updated.Latitude;
+            updateSikayet.Longitude = updated.Longitude;
+            updateSikayet.SikayetTuruId = updated.SikayetTuruId;
+            updateSikayet.GonderilmeTarihi = updated.GonderilmeTarihi;
+
+            await _unitOfWork.Repository<Sikayet>().Update(updateSikayet);
+            await _unitOfWork.CommitAsync();
+            return true;
+        }
+        #endregion
+
+        #region DeleteSikayet
+        public async Task<bool> DeleteSikayet(int sikayetId)
+        {
+            var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+            if (sikayet == null) return false;
+
+            await _unitOfWork.Repository<Sikayet>().Delete(sikayet.Id);
+            await _unitOfWork.CommitAsync();
+            return true;
+        }
+        #endregion
+
         #region CozulenSikayetler
         public async Task<int> CozulenSikayetSayisi()
         {
@@ -144,6 +176,14 @@ namespace SehirAsistanim.Infrastructure.Services
         {
             var sikayetler = await _unitOfWork.Repository<Sikayet>().GetAll();
             return sikayetler.Count(s => s.Durum == sikayetdurumu.Inceleniyor);
+        }
+        #endregion
+
+        #region KullanıcınınSikayetleri
+        public async Task<List<Sikayet>> GetAllByUser(int userId)
+        {
+            var kullanicininSikayetleri = await _unitOfWork.Repository<Sikayet>().GetAll();
+            return kullanicininSikayetleri.Where(x => x.Id == userId).ToList();
         }
         #endregion
     }
