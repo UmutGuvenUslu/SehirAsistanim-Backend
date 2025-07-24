@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SehirAsistanim.Domain.Interfaces;
 
 namespace SehirAsistanim.Domain.Dto_s
 {
-    public class SikayetDetayDto
+    public class SikayetDetayDto:IEntitiy
     {
         public int Id { get; set; }
         public string Baslik { get; set; }

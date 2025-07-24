@@ -180,9 +180,9 @@ namespace SehirAsistanim.Infrastructure.Services
         #endregion
 
         #region KullanıcınınSikayetleri
-        public async Task<List<Sikayet>> GetAllByUser(int userId)
+        public async Task<List<SikayetDetayDto>> GetAllByUser(int userId)
         {
-            var kullanicininSikayetleri = await _unitOfWork.Repository<Sikayet>().GetAll();
+            var kullanicininSikayetleri = await _unitOfWork.Repository<SikayetDetayDto>().GetAll();
             return kullanicininSikayetleri.Where(x => x.KullaniciId == userId).ToList();
 
         }

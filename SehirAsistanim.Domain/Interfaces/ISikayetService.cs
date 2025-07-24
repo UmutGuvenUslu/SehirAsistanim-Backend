@@ -25,7 +25,7 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<bool> DeleteSikayet(int id);
         Task<int> CozulenSikayetSayisi();
         Task<int> BekleyenSikayetSayisi();
-        Task<List<Sikayet>> GetAllByUser(int userId);
+        Task<List<SikayetDetayDto>> GetAllByUser(int userId);
 
     }
 }
