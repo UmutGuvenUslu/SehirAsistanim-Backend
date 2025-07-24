@@ -182,8 +182,38 @@ namespace SehirAsistanim.Infrastructure.Services
         #region KullanıcınınSikayetleri
         public async Task<List<SikayetDetayDto>> GetAllByUser(int userId)
         {
-            var kullanicininSikayetleri = await _unitOfWork.Repository<SikayetDetayDto>().GetAll();
-            return kullanicininSikayetleri.Where(x => x.KullaniciId == userId).ToList();
+            var query = _unitOfWork.Repository<Sikayet>()
+               .GetQueryable()
+               .Include(s => s.Kullanici)
+               .Include(s => s.SikayetTuru)
+               .Include(s => s.CozenBirim);
+
+            var list = await query.Select(s => new SikayetDetayDto
+            {
+                Id = s.Id,
+                Baslik = s.Baslik,
+                Aciklama = s.Aciklama,
+                Latitude = s.Latitude,
+                Longitude = s.Longitude,
+                FotoUrl = s.FotoUrl,
+                GonderilmeTarihi = s.GonderilmeTarihi,
+                CozulmeTarihi = s.CozulmeTarihi,
+                Durum = s.Durum.ToString(),
+                DogrulanmaSayisi = s.DogrulanmaSayisi,
+                Silindimi = s.Silindimi,
+                DuyguPuani = s.DuyguPuani,
+
+                KullaniciId = s.KullaniciId,
+                KullaniciAdi = s.Kullanici.Isim + " " + s.Kullanici.Soyisim,
+                KullaniciEmail = s.Kullanici.Email,
+
+                SikayetTuruId = s.SikayetTuruId,
+                SikayetTuruAdi = s.SikayetTuru.Ad,
+
+                CozenBirimId = s.CozenBirimId,
+                CozenBirimAdi = s.CozenBirim != null ? s.CozenBirim.BirimAdi : null
+            }).ToListAsync();
+            return list.Where(x => x.KullaniciId == userId).ToList();
 
         }
         #endregion
