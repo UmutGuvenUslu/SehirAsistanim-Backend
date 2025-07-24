@@ -183,7 +183,8 @@ namespace SehirAsistanim.Infrastructure.Services
         public async Task<List<Sikayet>> GetAllByUser(int userId)
         {
             var kullanicininSikayetleri = await _unitOfWork.Repository<Sikayet>().GetAll();
-            return kullanicininSikayetleri.Where(x => x.Id == userId).ToList();
+            return kullanicininSikayetleri.Where(x => x.KullaniciId == userId).ToList();
+
         }
         #endregion
     }

@@ -179,7 +179,7 @@ namespace SehirAsistani.Api.Controllers
         }
 
         [Authorize]
-        [HttpGet("GetAllByUser")]
+        [HttpGet] // Burada parametre belirtmeye gerek yok
         public async Task<List<Sikayet>> GetAllByUser([FromQuery] int userId)
         {
             try
@@ -193,14 +193,15 @@ namespace SehirAsistani.Api.Controllers
             catch (Exception ex)
             {
                 Console.WriteLine($"GetAllByUser hata: {ex.Message}");
-                return new List<Sikayet>(); 
+                return new List<Sikayet>();
             }
         }
+
 
     }
 
 
 
- 
+
 
 }
