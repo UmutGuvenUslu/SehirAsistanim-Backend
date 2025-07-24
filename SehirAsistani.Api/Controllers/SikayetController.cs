@@ -177,7 +177,7 @@ namespace SehirAsistani.Api.Controllers
                 return false;
             }
         }
-        [Authorize]
+        //[Authorize]
         [HttpGet]
         public async Task<List<SikayetDetayDto>> GetAllByUser([FromQuery] int userId)
         {
