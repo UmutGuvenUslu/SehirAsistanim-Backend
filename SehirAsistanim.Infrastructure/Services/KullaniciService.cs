@@ -64,7 +64,19 @@ namespace SehirAsistanim.Infrastructure.Services
             if (kullanici == null)
                 return false;
 
+            // Kullanıcıya bağlı şikayetleri çek
+            var sikayetler = _unitofWork.Repository<Sikayet>().GetAll().Result.Where(s => s.KullaniciId == kullaniciId).ToList();
+
+            // Şikayetleri tek tek sil
+            foreach (var sikayet in sikayetler)
+            {
+                _unitofWork.Repository<Sikayet>().Delete(sikayet.Id);
+            }
+
+            // Kullanıcıyı sil
             _unitofWork.Repository<Kullanici>().Delete(kullanici.Id);
+
+            // Değişiklikleri kaydet
             await _unitofWork.CommitAsync();
             return true;
         }

@@ -177,23 +177,22 @@ namespace SehirAsistani.Api.Controllers
                 return false;
             }
         }
-
         [Authorize]
-        [HttpGet] // Burada parametre belirtmeye gerek yok
-        public async Task<List<Sikayet>> GetAllByUser([FromQuery] int userId)
+        [HttpGet]
+        public async Task<List<SikayetDetayDto>> GetAllByUser([FromQuery] int userId)
         {
             try
             {
                 if (userId <= 0)
-                    return new List<Sikayet>();
+                    return new List<SikayetDetayDto>();
 
                 var complaints = await _service.GetAllByUser(userId);
-                return complaints ?? new List<Sikayet>();
+                return complaints ?? new List<SikayetDetayDto>();
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"GetAllByUser hata: {ex.Message}");
-                return new List<Sikayet>();
+                return new List<SikayetDetayDto>();
             }
         }
 
