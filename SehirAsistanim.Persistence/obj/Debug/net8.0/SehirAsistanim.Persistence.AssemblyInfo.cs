@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SehirAsistanim.Persistence")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7bd182a41dd5f0f9c3564cd825e44d8aeb8380a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f5c68a1a9cf32f7a16ed1c08d337df06ae01c57")]
 [assembly: System.Reflection.AssemblyProductAttribute("SehirAsistanim.Persistence")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SehirAsistanim.Persistence")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -75,6 +75,21 @@ namespace SehirAsistani.Api.Controllers
             }
         }
         [Authorize]
+        [HttpPut]
+        public async Task<bool> Update([FromBody] Sikayet sikayet)
+        {
+            try
+            {
+                return await _service.UpdateSikayet(sikayet);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Update hata: {ex.Message}");
+                return false;
+            }
+        }
+
+        [Authorize]
         [HttpPut("{id}/{birimId}")]
         public async Task<bool> UpdateDurum(int id, int birimId)
         {
@@ -147,5 +162,26 @@ namespace SehirAsistani.Api.Controllers
                 return 0;
             }
         }
+
+        [Authorize]
+        [HttpDelete("{id}")]
+        public async Task<bool> Delete(int id)
+        {
+            try
+            {
+                return await _service.DeleteSikayet(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Delete hata: {ex.Message}");
+                return false;
+            }
+        }
+
     }
+
+
+
+ 
+
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using BCrypt.Net;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Interfaces;
 using SehirAsistanim.Infrastructure.UnitOfWork;
@@ -45,7 +46,12 @@ namespace SehirAsistanim.Infrastructure.Services
         #region Update
         public async Task<Kullanici> UpdateKullanici(Kullanici kullanici)
         {
-            _unitofWork.Repository<Kullanici>().Update(kullanici);
+           var updateKullanici = _unitofWork.Repository<Kullanici>().GetById(kullanici.Id).Result;
+            updateKullanici.Isim = kullanici.Isim;
+            updateKullanici.Soyisim = kullanici.Soyisim;
+            updateKullanici.Email = kullanici.Email;
+            updateKullanici.Rol = kullanici.Rol;
+            updateKullanici.TC = kullanici.TC;
             await _unitofWork.CommitAsync();
             return kullanici;
         }

@@ -53,7 +53,7 @@ namespace SehirAsistanim.Infrastructure.Services
         #region DeleteBelediyeBirimi
         public async Task<bool> DeleteBelediyeBirimi(int belediyeBirimiId)
         {
-            var belediyeBirimi = await _unitOfWork.Repository<SikayetTuru>().GetById(belediyeBirimiId);
+            var belediyeBirimi = await _unitOfWork.Repository<BelediyeBirimi>().GetById(belediyeBirimiId);
             if (belediyeBirimi == null)
                 return false;
 
