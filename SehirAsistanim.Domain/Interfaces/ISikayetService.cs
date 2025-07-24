@@ -18,7 +18,7 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<Sikayet> AddSikayet(Sikayet sikayet);
 
         Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId);
-        //Task<bool> SoftDelete(int sikayetId);
+        
         Task<bool> IncrementDogrulama(int sikayetId);
         Task<int> TotalSikayetSayisi();
         Task<bool> UpdateSikayet(Sikayet guncellenenSikayet);

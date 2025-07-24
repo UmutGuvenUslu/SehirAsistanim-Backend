@@ -19,7 +19,7 @@ namespace SehirAsistanim.Infrastructure.UnitOfWork
             _context = context;
         }
 
-        #region RepositoryCreate
+        #region Repository Oluştur
         public IGenericRepository<T> Repository<T>() where T : class, IEntitiy
         {
             return new GenericRepository<T>(_context);

@@ -14,6 +14,6 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<BelediyeBirimi> AddBelediyeBirimi(BelediyeBirimi belediyeBirimi);
         Task<BelediyeBirimi> UpdateBelediyeBirimi(BelediyeBirimi belediyeBirimiId);
         Task<bool> DeleteBelediyeBirimi(int belediyeBirimiId);
-        //Task<bool> SoftDeleteBelediyeBirimi(int belediyeBirimiId);
+        
     }
 }

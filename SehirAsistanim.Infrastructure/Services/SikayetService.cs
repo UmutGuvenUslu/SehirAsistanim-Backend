@@ -95,7 +95,7 @@ namespace SehirAsistanim.Infrastructure.Services
         }
         #endregion
 
-        //#region SoftDelete (İstendiğinde açılabilir)
+        #region SoftDelete (İstendiğinde açılabilir)
         //public async Task<bool> SoftDelete(int sikayetId)
         //{
         //    var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
@@ -108,7 +108,7 @@ namespace SehirAsistanim.Infrastructure.Services
 
         //    return true;
         //}
-        //#endregion
+        #endregion
 
         #region IncrementDogrulama
         public async Task<bool> IncrementDogrulama(int sikayetId)

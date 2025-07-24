@@ -51,25 +51,20 @@ namespace SehirAsistanim.Infrastructure.Services
         #region DeleteSikayetTuru
         public async Task<bool> DeleteSikayetTuru(int sikayetTuruId)
         {
-            // Önce silinecek türü getir
             var sikayetTuru = await _unitOfWork.Repository<SikayetTuru>().GetById(sikayetTuruId);
             if (sikayetTuru == null)
                 return false;
 
-            // Bu türe bağlı şikayetleri getir
             var sikayetler =  _unitOfWork.Repository<Sikayet>()
                 .GetAll().Result.Where(q=>q.SikayetTuruId == sikayetTuruId);
 
-            // Bağlantılı şikayetleri sil
             foreach (var sikayet in sikayetler)
             {
                 _unitOfWork.Repository<Sikayet>().Delete(sikayet.Id);
             }
 
-            // Şikayet türünü sil
             _unitOfWork.Repository<SikayetTuru>().Delete(sikayetTuru.Id);
 
-            // Tüm değişiklikleri kaydet
             await _unitOfWork.CommitAsync();
 
             return true;

@@ -64,25 +64,22 @@ namespace SehirAsistanim.Infrastructure.Services
             if (kullanici == null)
                 return false;
 
-            // Kullanıcıya bağlı şikayetleri çek
+            
             var sikayetler = _unitofWork.Repository<Sikayet>().GetAll().Result.Where(s => s.KullaniciId == kullaniciId).ToList();
 
-            // Şikayetleri tek tek sil
             foreach (var sikayet in sikayetler)
             {
                 _unitofWork.Repository<Sikayet>().Delete(sikayet.Id);
             }
 
-            // Kullanıcıyı sil
             _unitofWork.Repository<Kullanici>().Delete(kullanici.Id);
 
-            // Değişiklikleri kaydet
             await _unitofWork.CommitAsync();
             return true;
         }
         #endregion
 
-        //#region SoftDelete
+        #region SoftDelete
         //public async Task<bool> SoftDeleteKullanici(int kullaniciId)
         //{
         //    var kullanici = await _unitofWork.Repository<Kullanici>().GetById(kullaniciId);
@@ -95,7 +92,7 @@ namespace SehirAsistanim.Infrastructure.Services
         //    await _unitofWork.Commit();
         //    return true;
         //}
-        //#endregion
+        #endregion
 
         #region TotalKullaniciSayisi
         public async Task<int> TotalKullaniciSayisi()

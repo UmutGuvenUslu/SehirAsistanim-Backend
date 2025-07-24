@@ -6,26 +6,30 @@ public class ProfanityFilterMiddleware
     private readonly RequestDelegate _next;
     private readonly List<string> _bannedWords;
 
+    #region Constructor ve Dosya Yükleme
     public ProfanityFilterMiddleware(RequestDelegate next)
     {
         _next = next;
 
-        var currentDirectory = Directory.GetCurrentDirectory(); // /app
+        var currentDirectory = Directory.GetCurrentDirectory();
         var filePath = Path.Combine(currentDirectory, "Middlewares", "kotusoz.txt");
 
-
-        // 🔁 Dosyayı oku
         if (File.Exists(filePath))
         {
-            _bannedWords = File.ReadAllLines(filePath).Select(w => w.Trim().ToLower()).Where(w => !string.IsNullOrWhiteSpace(w)).ToList();
+            _bannedWords = File.ReadAllLines(filePath)
+                .Select(w => w.Trim().ToLower())
+                .Where(w => !string.IsNullOrWhiteSpace(w))
+                .ToList();
         }
         else
         {
             _bannedWords = new List<string>();
-            Console.WriteLine("❗ Uyarı: kotusoz.txt dosyası bulunamadı.");
+            Console.WriteLine("kotusoz.txt dosyası bulunamadı.");
         }
     }
+    #endregion
 
+    #region Request Denetimi ve Filtreleme
     public async Task InvokeAsync(HttpContext context)
     {
         if (context.Request.Method == HttpMethods.Post &&
@@ -51,12 +55,14 @@ public class ProfanityFilterMiddleware
 
             if (json.RootElement.TryGetProperty("Baslik", out var baslik))
             {
-                baslikKufurlu = _bannedWords.Any(word => baslik.ToString().ToLower().Contains(word));
+                baslikKufurlu = _bannedWords.Any(word =>
+                    baslik.ToString().ToLower().Contains(word));
             }
 
             if (json.RootElement.TryGetProperty("Aciklama", out var aciklama))
             {
-                aciklamaKufurlu = _bannedWords.Any(word => aciklama.ToString().ToLower().Contains(word));
+                aciklamaKufurlu = _bannedWords.Any(word =>
+                    aciklama.ToString().ToLower().Contains(word));
             }
 
             if (baslikKufurlu || aciklamaKufurlu)
@@ -64,17 +70,11 @@ public class ProfanityFilterMiddleware
                 context.Response.StatusCode = 400;
 
                 if (baslikKufurlu && aciklamaKufurlu)
-                {
                     await context.Response.WriteAsync("Başlık ve açıklama alanlarında uygunsuz kelimeler tespit edildi.");
-                }
                 else if (baslikKufurlu)
-                {
                     await context.Response.WriteAsync("Başlık alanında uygunsuz kelimeler tespit edildi.");
-                }
-                else // aciklamaKufurlu
-                {
+                else
                     await context.Response.WriteAsync("Açıklama alanında uygunsuz kelimeler tespit edildi.");
-                }
 
                 return;
             }
@@ -82,5 +82,5 @@ public class ProfanityFilterMiddleware
 
         await _next(context);
     }
-
+    #endregion
 }

@@ -16,13 +16,16 @@ public class AuthController : ControllerBase
         _authService = authService;
     }
 
+    #region Doğrulama Kodu Gönderme
     [HttpPost("send-verification-code")]
     public async Task<IActionResult> SendVerificationCode([FromQuery] string email)
     {
         await _emailService.SendVerificationCode(email);
         return Ok(new { message = "Doğrulama kodu gönderildi." });
     }
+    #endregion
 
+    #region Doğrulama ve Kayıt
     [HttpPost("verify-and-register")]
     public async Task<IActionResult> VerifyAndRegister([FromBody] RegisterDto dto)
     {
@@ -38,12 +41,12 @@ public class AuthController : ControllerBase
         }
         catch (Exception ex)
         {
-            // Loglama yapabilirsin
             return StatusCode(500, new { message = "Sunucu hatası: " + ex.Message });
         }
     }
+    #endregion
 
-
+    #region Giriş
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
@@ -57,8 +60,9 @@ public class AuthController : ControllerBase
             return BadRequest(new { message = ex.Message });
         }
     }
+    #endregion
 
-    #region KullaniciEmailVarMi
+    #region Kullanıcı Email Var Mı
     [HttpGet("IsEmailRegistered")]
     public async Task<IActionResult> IsEmailRegistered([FromQuery] string email)
     {
@@ -70,14 +74,11 @@ public class AuthController : ControllerBase
     }
     #endregion
 
-    #region KullaniciTCVarMi
+    #region Kullanıcı TC Var Mı
+    [HttpGet("tc-analiz")]
     public async Task<bool> TcAnaliz([FromQuery] string tc)
     {
         return await _authService.TcAnaliz(tc);
-
     }
-        #endregion
-
-
-
-    }
+    #endregion
+}

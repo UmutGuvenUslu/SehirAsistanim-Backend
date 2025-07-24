@@ -66,8 +66,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetTuruService.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAEsAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T16:48:08.423Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-24T16:48:08.423Z"
             },
             {
               "$type": "Document",
@@ -137,7 +136,7 @@
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "ToolTip": "C:\\Users\\Buse\\source\\repos\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
               "RelativeToolTip": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEQAAAAaAAAAAAAAAA==",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAowEQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T16:43:25.903Z",
               "EditorCaption": ""
@@ -164,8 +163,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "ViewState": "AgIAALQAAAAAAAAAAAAQwL0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:44:01.135Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T16:44:01.135Z"
             }
           ]
         }

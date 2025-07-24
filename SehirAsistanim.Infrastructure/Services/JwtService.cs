@@ -6,16 +6,18 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 
-
 public class JwtService
 {
     private readonly IConfiguration _configuration;
 
+    #region Constructor
     public JwtService(IConfiguration configuration)
     {
         _configuration = configuration;
     }
+    #endregion
 
+    #region JWT Token Üret
     public Task<string> GenerateJwtToken(Kullanici user)
     {
         var jwtSettings = _configuration.GetSection("JwtSettings");
@@ -27,7 +29,7 @@ public class JwtService
             new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
             new Claim(JwtRegisteredClaimNames.Email, user.Email),
             new Claim(ClaimTypes.Name, $"{user.Isim} {user.Soyisim}"),
-            new Claim(ClaimTypes.Role, user.Rol.ToString()), 
+            new Claim(ClaimTypes.Role, user.Rol.ToString()),
             new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString())
         };
 
@@ -42,4 +44,5 @@ public class JwtService
         var tokenHandler = new JwtSecurityTokenHandler();
         return Task.FromResult(tokenHandler.WriteToken(token));
     }
+    #endregion
 }

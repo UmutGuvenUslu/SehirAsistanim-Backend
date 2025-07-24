@@ -12,7 +12,6 @@ namespace SehirAsistani.Api.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-
     public class SikayetController : ControllerBase
     {
         private readonly ISikayetService _service;
@@ -22,6 +21,7 @@ namespace SehirAsistani.Api.Controllers
             _service = service;
         }
 
+        #region Tüm Şikayetleri Getir
         [HttpGet]
         public async Task<List<SikayetDetayDto>> GetAll()
         {
@@ -29,12 +29,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.GetAll();
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"GetAll hata: {ex.Message}");
                 return new List<SikayetDetayDto>();
             }
         }
+        #endregion
+
+        #region Id ile Şikayet Getir
         [Authorize]
         [HttpGet("{id}")]
         public async Task<Sikayet> GetById(int id)
@@ -43,12 +45,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.GetById(id);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"GetById hata: {ex.Message}");
                 return null;
             }
         }
+        #endregion
+
+        #region Şikayet Ekle
         [Authorize]
         [HttpPost]
         public async Task<Sikayet> Add([FromBody] Sikayet sikayet)
@@ -56,24 +60,18 @@ namespace SehirAsistani.Api.Controllers
             try
             {
                 if (sikayet == null)
-                {
-                    Console.WriteLine("Add hata: Gönderilen şikayet bilgisi boş.");
                     return null;
-                }
-
-                // Kullanıcı kimliği ataması istersen buraya ekleyebilirsin:
-                // var kullaniciIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
-                // if (kullaniciIdClaim != null)
-                //     sikayet.KullaniciId = int.Parse(kullaniciIdClaim.Value);
 
                 return await _service.AddSikayet(sikayet);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"Add hata: {ex.Message}");
                 return null;
             }
         }
+        #endregion
+
+        #region Şikayet Güncelle (Admin)
         [Authorize(Roles = "Admin")]
         [HttpPut]
         public async Task<bool> Update([FromBody] Sikayet sikayet)
@@ -82,13 +80,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.UpdateSikayet(sikayet);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"Update hata: {ex.Message}");
                 return false;
             }
         }
+        #endregion
 
+        #region Durum Güncelle (Çözüldü Yap)
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}/{birimId}")]
         public async Task<bool> UpdateDurum(int id, int birimId)
@@ -97,12 +96,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.UpdateDurumAsCozuldu(id, birimId);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"UpdateDurum hata: {ex.Message}");
                 return false;
             }
         }
+        #endregion
+
+        #region Doğrulama Sayısı Arttır
         [Authorize]
         [HttpPut("{id}")]
         public async Task<bool> IncrementDogrulama(int id)
@@ -111,13 +112,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.IncrementDogrulama(id);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"IncrementDogrulama hata: {ex.Message}");
                 return false;
             }
         }
+        #endregion
 
+        #region İstatistikler (Admin)
         [Authorize(Roles = "Admin")]
         [HttpGet]
         public async Task<int> TotalSikayetSayisi()
@@ -126,9 +128,8 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.TotalSikayetSayisi();
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"TotalSikayetSayisi hata: {ex.Message}");
                 return 0;
             }
         }
@@ -141,9 +142,8 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.CozulenSikayetSayisi();
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"CozulenSikayetSayisi hata: {ex.Message}");
                 return 0;
             }
         }
@@ -156,13 +156,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.BekleyenSikayetSayisi();
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"BekleyenSikayetSayisi hata: {ex.Message}");
                 return 0;
             }
         }
+        #endregion
 
+        #region Şikayet Sil (Admin)
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<bool> Delete(int id)
@@ -171,12 +172,14 @@ namespace SehirAsistani.Api.Controllers
             {
                 return await _service.DeleteSikayet(id);
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"Delete hata: {ex.Message}");
                 return false;
             }
         }
+        #endregion
+
+        #region Kullanıcıya Ait Şikayetleri Getir
         [Authorize]
         [HttpGet]
         public async Task<List<SikayetDetayDto>> GetAllByUser([FromQuery] int userId)
@@ -189,18 +192,11 @@ namespace SehirAsistani.Api.Controllers
                 var complaints = await _service.GetAllByUser(userId);
                 return complaints ?? new List<SikayetDetayDto>();
             }
-            catch (Exception ex)
+            catch
             {
-                Console.WriteLine($"GetAllByUser hata: {ex.Message}");
                 return new List<SikayetDetayDto>();
             }
         }
-
-
+        #endregion
     }
-
-
-
-
-
 }

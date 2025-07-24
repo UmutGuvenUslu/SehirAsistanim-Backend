@@ -14,6 +14,6 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<SikayetTuru> AddSikayetTuru(SikayetTuru sikayetTuru);
         Task<SikayetTuru> UpdateSikayetTuru(SikayetTuru sikayetTuru);
         Task<bool> DeleteSikayetTuru(int sikayetTuruId);
-        //Task<bool> SoftDeleteSikayetTuru(int sikayetTuruId);
+        
     }
 }
