@@ -88,7 +88,7 @@ namespace SehirAsistanim.Infrastructure.Services
             sikayet.Durum = durum;
             if (durum == sikayetdurumu.Cozuldu)
             {
-                sikayet.CozulmeTarihi = DateTime.Now;
+                sikayet.CozulmeTarihi = DateTime.UtcNow.ToUniversalTime();
 
             }
             else
