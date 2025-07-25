@@ -24,7 +24,7 @@ namespace SehirAsistanim.Infrastructure.Services
             {
                 SikayetId = sikayetId,
                 KullaniciId = kullaniciId,
-                DogrulamaTarihi = DateTime.Now
+                DogrulamaTarihi = DateTime.UtcNow
             };
             await _unitofWork.Repository<SikayetDogrulama>().Add(sikayetdogrulama);
             await _unitofWork.CommitAsync();
