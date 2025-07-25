@@ -18,12 +18,12 @@ namespace SehirAsistani.Api.Controllers
 
         #region Doğrulama Sayısı Arttır
         [Authorize]
-        [HttpPut("{id}")]
-        public async Task<bool> IncrementDogrulama(int id)
+        [HttpPut]
+        public async Task<bool> IncrementDogrulama(int sikayetId,int kullanciId)
         {
             try
             {
-                return await _service.IncrementDogrulama(id);
+                return await _service.IncrementDogrulama(sikayetId,kullanciId);
             }
             catch
             {
