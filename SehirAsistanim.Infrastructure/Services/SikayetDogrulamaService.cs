@@ -48,7 +48,7 @@ namespace SehirAsistanim.Infrastructure.Services
             var sikayet = await _unitofWork.Repository<Sikayet>().GetById(sikayetId);
             sikayet.DogrulanmaSayisi++;
             await _unitofWork.Repository<Sikayet>().Update(sikayet);
-            SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
+            await SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
             await _unitofWork.CommitAsync();
             return true;
         }
