@@ -17,6 +17,23 @@ namespace SehirAsistanim.Infrastructure.Services
             _unitofWork = unitofWork;
         }
 
+        #region SikayetDogrulamaAddKullanici
+        public async Task<bool> SikayetDogrulamaAddKullanici(int sikayetId, int kullaniciId)
+        {
+            var sikayetdogrulama = new SikayetDogrulama
+            {
+                SikayetId = sikayetId,
+                KullaniciId = kullaniciId,
+                DogrulamaTarihi = DateTime.Now
+            };
+            await _unitofWork.Repository<SikayetDogrulama>().Add(sikayetdogrulama);
+            await _unitofWork.CommitAsync();
+            return true;
+        }
+        #endregion
+
+
+
         #region IncrementDogrulama
         public async Task<bool> IncrementDogrulama(int sikayetId,int kullaniciId)
         {
@@ -31,6 +48,7 @@ namespace SehirAsistanim.Infrastructure.Services
             var sikayet = await _unitofWork.Repository<Sikayet>().GetById(sikayetId);
             sikayet.DogrulanmaSayisi++;
             await _unitofWork.Repository<Sikayet>().Update(sikayet);
+            SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
             await _unitofWork.CommitAsync();
             return true;
         }

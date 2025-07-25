@@ -9,6 +9,8 @@ namespace SehirAsistanim.Domain.Interfaces
     public interface ISikayetDogrulamaService
     {
         Task<bool> IncrementDogrulama(int sikayetId,int kullaniciId);
+        Task<bool> SikayetDogrulamaAddKullanici(int sikayetId, int kullaniciId);
+
 
     }
 }
