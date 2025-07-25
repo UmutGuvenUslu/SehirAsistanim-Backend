@@ -4,7 +4,7 @@ using SehirAsistanim.Domain.Interfaces;
 
 namespace SehirAsistanim.Domain.Entities
 {
-    [Table("sikayetdogrulamari")]
+    [Table("sikayetdogrulamalari")]
     public class SikayetDogrulama:IEntitiy
     {
         [Key]
