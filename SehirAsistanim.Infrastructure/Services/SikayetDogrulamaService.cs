@@ -39,22 +39,18 @@ namespace SehirAsistanim.Infrastructure.Services
         {
             try
             {
-                // Sadece ilgili kullanıcının bu şikayeti doğrulayıp doğrulamadığını kontrol ediyoruz
-                var dahaOnceDogruladiMi = await _unitofWork.Repository<SikayetDogrulama>()
-                    .GetAll()
-                    .AnyAsync(s => s.SikayetId == sikayetId && s.KullaniciId == kullaniciId);
-
-                if (dahaOnceDogruladiMi)
+                var sikayetdogrulamatablosu = _unitofWork.Repository<SikayetDogrulama>().GetAll().Result.Where(s => s.SikayetId == sikayetId).ToList();
+                foreach (var k in sikayetdogrulamatablosu)
                 {
-                    return false;
+                    if (k.KullaniciId == kullaniciId)
+                    {
+                        return false;
+                    }
                 }
 
                 var sikayet = await _unitofWork.Repository<Sikayet>().GetById(sikayetId);
-                if (sikayet == null) return false;
-
                 sikayet.DogrulanmaSayisi++;
                 await _unitofWork.Repository<Sikayet>().Update(sikayet);
-
                 await SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
                 await _unitofWork.CommitAsync();
                 return true;
