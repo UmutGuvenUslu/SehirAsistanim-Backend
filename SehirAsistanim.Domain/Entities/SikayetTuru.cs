@@ -16,5 +16,7 @@ namespace SehirAsistanim.Domain.Entities
         public string Ad { get; set; }
         [Column("varsayilanbirimid")]
         public int VarsayilanBirimId { get; set; }
+        [Column("icon")]
+        public string icon { get; set; }
     }
 }
