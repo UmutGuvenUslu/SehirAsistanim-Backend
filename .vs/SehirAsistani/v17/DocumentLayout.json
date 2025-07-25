@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
               "RelativeToolTip": "SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAgAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T19:50:42.418Z",
               "EditorCaption": ""
@@ -147,8 +147,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T18:49:39.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T18:49:39.044Z"
             }
           ]
         }

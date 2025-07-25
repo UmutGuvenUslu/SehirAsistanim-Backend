@@ -12,7 +12,7 @@ namespace SehirAsistanim.Domain.Entities
         public int Id { get; set; }
         [Column("sikayetid")]
         public int SikayetId { get; set; }
-        [Column("kullaciid")]
+        [Column("kullaniciid")]
         public int KullaniciId { get; set; }
         [Column("dogrulamatarihi")]
         public DateTime DogrulamaTarihi { get; set; }
