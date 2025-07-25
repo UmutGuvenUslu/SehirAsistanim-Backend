@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using SehirAsistanim.Domain.Interfaces;
 using SehirAsistanim.Domain.Dto_s;
+using SehirAsistanim.Domain.Enums;
 
 namespace SehirAsistani.Api.Controllers
 {
@@ -89,12 +90,12 @@ namespace SehirAsistani.Api.Controllers
 
         #region Durum Güncelle (Çözüldü Yap)
         [Authorize(Roles = "Admin")]
-        [HttpPut("{id}/{birimId}")]
-        public async Task<bool> UpdateDurum(int id, int birimId)
+        [HttpPut("{id}/{durum}")]
+        public async Task<bool> UpdateDurum(int id, sikayetdurumu durum)
         {
             try
             {
-                return await _service.UpdateDurumAsCozuldu(id, birimId);
+                return await _service.UpdateDurumAsCozuldu(id, durum);
             }
             catch
             {

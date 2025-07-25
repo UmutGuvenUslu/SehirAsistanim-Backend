@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SehirAsistanim.Domain.Dto_s;
 using SehirAsistanim.Domain.Entities;
+using SehirAsistanim.Domain.Enums;
 
 namespace SehirAsistanim.Domain.Interfaces
 {
@@ -17,7 +18,7 @@ namespace SehirAsistanim.Domain.Interfaces
         Task<Sikayet> GetById(int sikayetId);
         Task<Sikayet> AddSikayet(Sikayet sikayet);
 
-        Task<bool> UpdateDurumAsCozuldu(int sikayetId, int cozenBirimId);
+        Task<bool> UpdateDurumAsCozuldu(int sikayetId, sikayetdurumu durum);
         
         Task<bool> IncrementDogrulama(int sikayetId);
         Task<int> TotalSikayetSayisi();
