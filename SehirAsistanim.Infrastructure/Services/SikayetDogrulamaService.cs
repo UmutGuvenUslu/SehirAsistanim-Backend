@@ -39,27 +39,33 @@ namespace SehirAsistanim.Infrastructure.Services
         {
             try
             {
-                var sikayetdogrulamatablosu = _unitofWork.Repository<SikayetDogrulama>().GetAll().Result.Where(s => s.SikayetId == sikayetId).ToList();
-                foreach (var k in sikayetdogrulamatablosu)
+                // Sadece ilgili kullanıcının bu şikayeti doğrulayıp doğrulamadığını kontrol ediyoruz
+                var dahaOnceDogruladiMi = await _unitofWork.Repository<SikayetDogrulama>()
+                    .GetAll()
+                    .AnyAsync(s => s.SikayetId == sikayetId && s.KullaniciId == kullaniciId);
+
+                if (dahaOnceDogruladiMi)
                 {
-                    if (k.KullaniciId == kullaniciId)
-                    {
-                        return false;
-                    }
+                    return false;
                 }
+
                 var sikayet = await _unitofWork.Repository<Sikayet>().GetById(sikayetId);
+                if (sikayet == null) return false;
+
                 sikayet.DogrulanmaSayisi++;
                 await _unitofWork.Repository<Sikayet>().Update(sikayet);
+
                 await SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
                 await _unitofWork.CommitAsync();
                 return true;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.Message);
+                Console.WriteLine($"Hata oluştu: {ex.Message}");
                 return false;
             }
-            #endregion
         }
+        #endregion
     }
 }
+
