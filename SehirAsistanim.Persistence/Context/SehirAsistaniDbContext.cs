@@ -38,6 +38,24 @@ public class SehirAsistaniDbContext : DbContext
         modelBuilder.Entity<Sikayet>()
             .Property(e => e.Durum)
             .HasConversion(durumConverter);
+
+        // Sikayet tablosundaki datetime alanları timestamptz olarak ayarlama
+        modelBuilder.Entity<Sikayet>(entity =>
+        {
+            entity.Property(e => e.GonderilmeTarihi)
+                .HasColumnType("timestamp with time zone");
+
+            entity.Property(e => e.CozulmeTarihi)
+                .HasColumnType("timestamp with time zone");
+        });
+
+        // SikayetDogrulama tablosundaki datetime alanları için
+        modelBuilder.Entity<SikayetDogrulama>(entity =>
+        {
+            entity.Property(e => e.DogrulamaTarihi)
+                .HasColumnType("timestamp with time zone");
+        });
     }
+
     #endregion
 }

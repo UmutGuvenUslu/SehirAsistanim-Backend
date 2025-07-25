@@ -7,24 +7,24 @@
       "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\services\\sikayetdogrulamaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\interfaces\\isikayetdogrulamaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\interfaces\\isikayetdogrulamaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\entities\\sikayetdogrulama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\entities\\sikayetdogrulama.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\entities\\sikayet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\entities\\sikayet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{5CCBEDBE-AB3E-4BF8-88D5-30D08E71947E}|SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.persistence\\context\\sehirasistanidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{5CCBEDBE-AB3E-4BF8-88D5-30D08E71947E}|SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj|solutionrelative:sehirasistanim.persistence\\context\\sehirasistanidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\entities\\sikayet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\entities\\sikayet.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\interfaces\\isikayetdogrulamaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|solutionrelative:sehirasistanim.domain\\interfaces\\isikayetdogrulamaservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\enums\\sikayetdurumu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
               "Title": "ISikayetDogrulamaService.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\ISikayetDogrulamaService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\ISikayetDogrulamaService.cs",
@@ -70,8 +70,7 @@
               "RelativeToolTip": "SehirAsistanim.Domain\\Interfaces\\ISikayetDogrulamaService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T20:01:50.872Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T20:01:50.872Z"
             },
             {
               "$type": "Document",
@@ -81,47 +80,49 @@
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetDogrulamaService.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetDogrulamaService.cs",
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetDogrulamaService.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABgAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAABBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T19:59:53.544Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "SikayetDogrulama.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
               "RelativeToolTip": "SehirAsistanim.Domain\\Entities\\SikayetDogrulama.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T19:50:42.418Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Sikayet.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "RelativeToolTip": "SehirAsistanim.Domain\\Entities\\Sikayet.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAswB8AAABEAAAAAAAAAA==",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAgwB8AAABFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T19:15:31.589Z"
+              "WhenOpened": "2025-07-25T19:15:31.589Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "SehirAsistaniDbContext.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
               "RelativeToolTip": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAkwBgAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T19:09:17.332Z"
+              "WhenOpened": "2025-07-25T19:09:17.332Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -173,7 +174,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "SikayetService.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
@@ -181,8 +182,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAFoAAABJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-25T18:49:39.044Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-25T18:49:39.044Z"
             }
           ]
         }
