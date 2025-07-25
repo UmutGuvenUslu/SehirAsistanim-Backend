@@ -20,7 +20,6 @@ namespace SehirAsistanim.Domain.Interfaces
 
         Task<bool> UpdateDurumAsCozuldu(int sikayetId, sikayetdurumu durum);
         
-        Task<bool> IncrementDogrulama(int sikayetId);
         Task<int> TotalSikayetSayisi();
         Task<bool> UpdateSikayet(Sikayet guncellenenSikayet);
         Task<bool> DeleteSikayet(int id);

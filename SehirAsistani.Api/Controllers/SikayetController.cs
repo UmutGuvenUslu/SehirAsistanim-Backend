@@ -104,22 +104,6 @@ namespace SehirAsistani.Api.Controllers
         }
         #endregion
 
-        #region Doğrulama Sayısı Arttır
-        [Authorize]
-        [HttpPut("{id}")]
-        public async Task<bool> IncrementDogrulama(int id)
-        {
-            try
-            {
-                return await _service.IncrementDogrulama(id);
-            }
-            catch
-            {
-                return false;
-            }
-        }
-        #endregion
-
         #region İstatistikler (Admin)
         [Authorize(Roles = "Admin")]
         [HttpGet]

@@ -1,10 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using SehirAsistanim.Domain.Interfaces;
 
 namespace SehirAsistanim.Domain.Entities
 {
     [Table("sikayetdogrulamari")]
-    public class SikayetDogrulama
+    public class SikayetDogrulama:IEntitiy
     {
         [Key]
         [Column("id")]

@@ -118,19 +118,6 @@ namespace SehirAsistanim.Infrastructure.Services
         //}
         #endregion
 
-        #region IncrementDogrulama
-        public async Task<bool> IncrementDogrulama(int sikayetId)
-        {
-            var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
-            if (sikayet == null) return false;
-
-            sikayet.DogrulanmaSayisi++;
-            await _unitOfWork.Repository<Sikayet>().Update(sikayet);
-            await _unitOfWork.CommitAsync();
-            return true;
-        }
-        #endregion
-
         #region TotalSikayet
         public async Task<int> TotalSikayetSayisi()
         {

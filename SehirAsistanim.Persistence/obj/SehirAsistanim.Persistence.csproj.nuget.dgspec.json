@@ -1,24 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {}
+    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {}
   },
   "projects": {
-    "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
+    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
         "projectName": "SehirAsistanim.Domain",
-        "projectPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
-        "packagesPath": "C:\\Users\\elif_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\obj\\",
+        "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj",
+        "packagesPath": "C:\\Users\\umutg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\elif_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\umutg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -45,7 +44,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -92,25 +92,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {
+    "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj",
+        "projectUniqueName": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj",
         "projectName": "SehirAsistanim.Persistence",
-        "projectPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj",
-        "packagesPath": "C:\\Users\\elif_\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\obj\\",
+        "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj",
+        "packagesPath": "C:\\Users\\umutg\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
-          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\elif_\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\umutg\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -126,8 +125,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
-                "projectPath": "C:\\Users\\elif_\\Source\\Repos\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj"
+              "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj": {
+                "projectPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj"
               }
             }
           }
@@ -141,7 +140,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -188,7 +188,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.303/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
