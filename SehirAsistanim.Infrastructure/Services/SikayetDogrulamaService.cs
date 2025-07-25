@@ -8,7 +8,7 @@ using SehirAsistanim.Domain.Interfaces;
 
 namespace SehirAsistanim.Infrastructure.Services
 {
-    public class SikayetDogrulamaService:ISikayetDogrulamaService
+    public class SikayetDogrulamaService : ISikayetDogrulamaService
     {
         public readonly IUnitOfWork _unitofWork;
 
@@ -35,23 +35,31 @@ namespace SehirAsistanim.Infrastructure.Services
 
 
         #region IncrementDogrulama
-        public async Task<bool> IncrementDogrulama(int sikayetId,int kullaniciId)
+        public async Task<bool> IncrementDogrulama(int sikayetId, int kullaniciId)
         {
-            var sikayetdogrulamatablosu =  _unitofWork.Repository<SikayetDogrulama>().GetAll().Result.Where(s=>s.SikayetId==sikayetId).ToList();
-            foreach(var k in sikayetdogrulamatablosu)
+            try
             {
-                if (k.KullaniciId == kullaniciId)
+                var sikayetdogrulamatablosu = _unitofWork.Repository<SikayetDogrulama>().GetAll().Result.Where(s => s.SikayetId == sikayetId).ToList();
+                foreach (var k in sikayetdogrulamatablosu)
                 {
-                    return false; 
+                    if (k.KullaniciId == kullaniciId)
+                    {
+                        return false;
+                    }
                 }
+                var sikayet = await _unitofWork.Repository<Sikayet>().GetById(sikayetId);
+                sikayet.DogrulanmaSayisi++;
+                await _unitofWork.Repository<Sikayet>().Update(sikayet);
+                await SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
+                await _unitofWork.CommitAsync();
+                return true;
             }
-            var sikayet = await _unitofWork.Repository<Sikayet>().GetById(sikayetId);
-            sikayet.DogrulanmaSayisi++;
-            await _unitofWork.Repository<Sikayet>().Update(sikayet);
-            await SikayetDogrulamaAddKullanici(sikayetId, kullaniciId);
-            await _unitofWork.CommitAsync();
-            return true;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                return false;
+            }
+            #endregion
         }
-        #endregion
     }
 }

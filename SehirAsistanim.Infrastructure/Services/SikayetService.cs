@@ -82,24 +82,34 @@ namespace SehirAsistanim.Infrastructure.Services
         #region UpdateDurumAsCozuldu
         public async Task<bool> UpdateDurumAsCozuldu(int sikayetId, sikayetdurumu durum)
         {
-            var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
-            if (sikayet == null) return false;
-
-            sikayet.Durum = durum;
-            if (durum == sikayetdurumu.Cozuldu)
+            try
             {
-                sikayet.CozulmeTarihi = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc);
 
+
+                var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+                if (sikayet == null) return false;
+
+                sikayet.Durum = durum;
+                if (durum == sikayetdurumu.Cozuldu)
+                {
+                    sikayet.CozulmeTarihi = DateTime.SpecifyKind(DateTime.UtcNow, DateTimeKind.Utc);
+
+                }
+                else
+                {
+                    sikayet.CozulmeTarihi = null;
+
+                }
+
+                await _unitOfWork.Repository<Sikayet>().Update(sikayet);
+                await _unitOfWork.CommitAsync();
+                return true;
             }
-            else
+            catch (Exception ex)
             {
-                sikayet.CozulmeTarihi = null;
-
+                Console.WriteLine(ex.Message);
+                return false;
             }
-
-            await _unitOfWork.Repository<Sikayet>().Update(sikayet);
-            await _unitOfWork.CommitAsync();
-            return true;
         }
         #endregion
 
