@@ -51,7 +51,7 @@ namespace SehirAsistanim.Infrastructure.Services
                             !s.Silindimi)
                 .ToListAsync();
         }
-        }
+        
 
         // Şikayete çözüm formu ekle (bir kez eklenebilir)
         public async Task<bool> AddCozumFormAsync(int sikayetId, int cozenKullaniciId, string aciklama, string? fotoUrl)
