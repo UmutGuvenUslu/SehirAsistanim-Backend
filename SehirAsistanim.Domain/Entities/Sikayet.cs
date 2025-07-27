@@ -43,7 +43,10 @@ namespace SehirAsistanim.Domain.Entities
         [Column("cozenbirimid")]
         public int? CozenBirimId { get; set; }
 
-        
+        [Column("turdogrumu")]
+        public bool turdogrumu { get; set; } = true;
+
+
         public Kullanici? Kullanici { get; set; }
 
         
@@ -51,5 +54,7 @@ namespace SehirAsistanim.Domain.Entities
 
         
         public BelediyeBirimi? CozenBirim { get; set; }
+
+        public ICollection<SikayetCozum>? sikayetCozum { get; set; }
     }
 }

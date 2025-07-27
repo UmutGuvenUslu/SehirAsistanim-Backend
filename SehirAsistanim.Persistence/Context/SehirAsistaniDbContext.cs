@@ -20,6 +20,8 @@ public class SehirAsistaniDbContext : DbContext
     public DbSet<SikayetLog> SikayetLoglari { get; set; }
     public DbSet<SikayetCozum> SikayetCozumleri { get; set; }
     public DbSet<Bildirim> Bildirimler { get; set; }
+
+    public DbSet<Rol> Roller { get; set; } 
     #endregion
 
     #region OnModelCreating
@@ -55,7 +57,15 @@ public class SehirAsistaniDbContext : DbContext
             entity.Property(e => e.DogrulamaTarihi)
                 .HasColumnType("timestamp with time zone");
         });
+
+
+        modelBuilder.Entity<Rol>(entity =>
+        {
+            entity.ToTable("roller");
+            entity.Property(e => e.Tur).HasColumnType("rolturu");
+        });
     }
+}
 
     #endregion
 }

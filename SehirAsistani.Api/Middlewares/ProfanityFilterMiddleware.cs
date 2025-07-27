@@ -53,16 +53,24 @@ public class ProfanityFilterMiddleware
             bool baslikKufurlu = false;
             bool aciklamaKufurlu = false;
 
+            // Başlık kontrolü
             if (json.RootElement.TryGetProperty("Baslik", out var baslik))
             {
-                baslikKufurlu = _bannedWords.Any(word =>
-                    baslik.ToString().ToLower().Contains(word));
+                var kelimeler = baslik.ToString()
+                    .ToLower()
+                    .Split(new[] { ' ', '.', ',', '!', '?', ';', ':', '\r', '\n', '\t', '-', '_' }, StringSplitOptions.RemoveEmptyEntries);
+
+                baslikKufurlu = kelimeler.Any(kelime => _bannedWords.Contains(kelime));
             }
 
+            // Açıklama kontrolü
             if (json.RootElement.TryGetProperty("Aciklama", out var aciklama))
             {
-                aciklamaKufurlu = _bannedWords.Any(word =>
-                    aciklama.ToString().ToLower().Contains(word));
+                var kelimeler = aciklama.ToString()
+                    .ToLower()
+                    .Split(new[] { ' ', '.', ',', '!', '?', ';', ':', '\r', '\n', '\t', '-', '_' }, StringSplitOptions.RemoveEmptyEntries);
+
+                aciklamaKufurlu = kelimeler.Any(kelime => _bannedWords.Contains(kelime));
             }
 
             if (baslikKufurlu || aciklamaKufurlu)
