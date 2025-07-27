@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Interfaces;
@@ -35,7 +36,7 @@ namespace SehirAsistanim.Infrastructure.Services
         }
 
         // Belediye biriminin görebileceği şikayetleri listele
-        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync(string roladi)
+        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync([FromQuery]string roladi)
         {
             var normalizeRol = NormalizeRolAdi(roladi);
 
