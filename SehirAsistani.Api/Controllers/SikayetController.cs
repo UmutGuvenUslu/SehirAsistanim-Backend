@@ -188,6 +188,7 @@ namespace SehirAsistani.Api.Controllers
 
         #region İstatistikler (Admin)
         [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "BirimAdmin")]
         [HttpGet]
         public async Task<int> TotalSikayetSayisi()
         {
@@ -262,6 +263,7 @@ namespace SehirAsistani.Api.Controllers
 
         #region Şikayet Sil (Admin)
         [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "BirimAdmin")]
         [HttpDelete("{id}")]
         public async Task<bool> Delete(int id)
         {

@@ -35,15 +35,14 @@ namespace SehirAsistanim.Infrastructure.Services
             // Girilen adı normalize et (küçük harf, boşlukları kaldır)
             var normalizedInput = Normalize(birimAdi);
 
-            return await _unitOfWork.Repository<Sikayet>()
+            return  _unitOfWork.Repository<Sikayet>()
                 .GetQueryable()
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
-                .Where(s =>
-                    s.Durum == sikayetdurumu.Inceleniyor &&
-                    s.SikayetTuru.Ad != null &&
-                    Normalize(s.SikayetTuru.Ad) == normalizedInput)
-                .ToListAsync();
+                .Where(s => s.Durum == sikayetdurumu.Inceleniyor && s.SikayetTuru.Ad != null)
+                .AsEnumerable() 
+                .Where(s => Normalize(s.SikayetTuru.Ad) == normalizedInput)
+                .ToList(); 
         }
 
         public async Task<bool> AddCozumFormAsync(int sikayetId, int cozenKullaniciId, string aciklama, string? fotoUrl)
