@@ -2,24 +2,35 @@
 using System.ComponentModel.DataAnnotations.Schema;
 using SehirAsistanim.Domain.Interfaces;
 
-
 namespace SehirAsistanim.Domain.Entities
 {
     [Table("sikayetcozumleri")]
-    public class SikayetCozum:IEntitiy
+    public class SikayetCozum : IEntitiy
     {
         [Key]
         [Column("id")]
         public int Id { get; set; }
+
         [Column("sikayetid")]
         public int SikayetId { get; set; }
+
         [Column("cozenkullanici")]
         public int CozenKullaniciId { get; set; }
+
         [Column("cozumaciklamasi")]
         public string? CozumAciklamasi { get; set; }
+
         [Column("cozumfotourl")]
         public string? CozumFotoUrl { get; set; }
+
         [Column("cozumetarihi")]
         public DateTime CozumeTarihi { get; set; }
+
+
+        [ForeignKey("sikayetid")]
+        public Sikayet? Sikayet { get; set; }
+
+        [ForeignKey("cozenkullanici")]
+        public Kullanici? CozenKullanici { get; set; }
     }
 }
