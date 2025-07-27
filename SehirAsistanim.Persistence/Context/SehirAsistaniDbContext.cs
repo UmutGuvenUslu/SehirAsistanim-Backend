@@ -20,7 +20,6 @@ public class SehirAsistaniDbContext : DbContext
     public DbSet<SikayetLog> SikayetLoglari { get; set; }
     public DbSet<SikayetCozum> SikayetCozumleri { get; set; }
     public DbSet<Bildirim> Bildirimler { get; set; }
-
     public DbSet<Rol> Roller { get; set; } 
     #endregion
 

@@ -3,6 +3,7 @@ using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Infrastructure.Services;
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using SehirAsistanim.Domain.Interfaces;
@@ -16,10 +17,25 @@ namespace SehirAsistani.Api.Controllers
     public class SikayetController : ControllerBase
     {
         private readonly ISikayetService _service;
+        private readonly ISikayetLoglariService _logService;
 
-        public SikayetController(ISikayetService service)
+        public SikayetController(ISikayetService service, ISikayetLoglariService logService)
         {
             _service = service;
+            _logService = logService;
+        }
+
+        private int? GetUserIdFromClaims()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var userIdClaim = User.FindFirst(ClaimTypes.NameIdentifier);
+                if (userIdClaim != null && int.TryParse(userIdClaim.Value, out int userId))
+                {
+                    return userId;
+                }
+            }
+            return null;
         }
 
         #region Tüm Şikayetleri Getir
@@ -28,7 +44,17 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.GetAll();
+                var result = await _service.GetAll();
+
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    SikayetId = null,
+                    Tarih = DateTime.UtcNow,
+                    Aciklama = $"Tüm şikayetler getirildi. Toplam: {result.Count} şikayet."
+                });
+
+                return result;
             }
             catch
             {
@@ -44,7 +70,19 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.GetById(id);
+                var result = await _service.GetById(id);
+
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    SikayetId = id,
+                    Tarih = DateTime.UtcNow,
+                    Aciklama = result != null
+                        ? $"Şikayet ID={id} getirildi."
+                        : $"Şikayet ID={id} bulunamadı."
+                });
+
+                return result;
             }
             catch
             {
@@ -63,7 +101,20 @@ namespace SehirAsistani.Api.Controllers
                 if (sikayet == null)
                     return null;
 
-                return await _service.AddSikayet(sikayet);
+                var added = await _service.AddSikayet(sikayet);
+
+                if (added != null)
+                {
+                    await _logService.LogAsync(new SikayetLog
+                    {
+                        KullaniciId = GetUserIdFromClaims(),
+                        SikayetId = added.Id,
+                        Tarih = DateTime.UtcNow,
+                        Aciklama = $"Yeni şikayet eklendi. ID={added.Id}, Başlık='{added.Baslik}'."
+                    });
+                }
+
+                return added;
             }
             catch
             {
@@ -79,7 +130,24 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.UpdateSikayet(sikayet);
+                var beforeUpdate = await _service.GetById(sikayet.Id);
+
+                var result = await _service.UpdateSikayet(sikayet);
+
+                if (result)
+                {
+                    string changes = GetChangesDescription(beforeUpdate, sikayet);
+
+                    await _logService.LogAsync(new SikayetLog
+                    {
+                        KullaniciId = GetUserIdFromClaims(),
+                        SikayetId = sikayet.Id,
+                        Tarih = DateTime.UtcNow,
+                        Aciklama = $"Şikayet güncellendi. ID={sikayet.Id}. Değişiklikler: {changes}"
+                    });
+                }
+
+                return result;
             }
             catch
             {
@@ -95,7 +163,21 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.UpdateDurumAsCozuldu(id, durum);
+                var beforeUpdate = await _service.GetById(id);
+                var result = await _service.UpdateDurumAsCozuldu(id, durum);
+
+                if (result)
+                {
+                    await _logService.LogAsync(new SikayetLog
+                    {
+                        KullaniciId = GetUserIdFromClaims(),
+                        SikayetId = id,
+                        Tarih = DateTime.UtcNow,
+                        Aciklama = $"Şikayet durumu güncellendi. ID={id}. Eski durum: {beforeUpdate?.Durum}, Yeni durum: {durum}"
+                    });
+                }
+
+                return result;
             }
             catch
             {
@@ -111,7 +193,17 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.TotalSikayetSayisi();
+                var count = await _service.TotalSikayetSayisi();
+
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    SikayetId = null,
+                    Tarih = DateTime.UtcNow,
+                    Aciklama = $"Toplam şikayet sayısı sorgulandı. Sonuç: {count}"
+                });
+
+                return count;
             }
             catch
             {
@@ -125,7 +217,17 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.CozulenSikayetSayisi();
+                var count = await _service.CozulenSikayetSayisi();
+
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    SikayetId = null,
+                    Tarih = DateTime.UtcNow,
+                    Aciklama = $"Çözülen şikayet sayısı sorgulandı. Sonuç: {count}"
+                });
+
+                return count;
             }
             catch
             {
@@ -139,7 +241,17 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.BekleyenSikayetSayisi();
+                var count = await _service.BekleyenSikayetSayisi();
+
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    SikayetId = null,
+                    Tarih = DateTime.UtcNow,
+                    Aciklama = $"Bekleyen şikayet sayısı sorgulandı. Sonuç: {count}"
+                });
+
+                return count;
             }
             catch
             {
@@ -155,7 +267,22 @@ namespace SehirAsistani.Api.Controllers
         {
             try
             {
-                return await _service.DeleteSikayet(id);
+                var beforeDelete = await _service.GetById(id);
+
+                var result = await _service.DeleteSikayet(id);
+
+                if (result)
+                {
+                    await _logService.LogAsync(new SikayetLog
+                    {
+                        KullaniciId = GetUserIdFromClaims(),
+                        SikayetId = id,
+                        Tarih = DateTime.UtcNow,
+                        Aciklama = $"Şikayet silindi. ID={id}, Başlık='{beforeDelete?.Baslik}'"
+                    });
+                }
+
+                return result;
             }
             catch
             {
@@ -175,6 +302,15 @@ namespace SehirAsistani.Api.Controllers
                     return new List<SikayetDetayDto>();
 
                 var complaints = await _service.GetAllByUser(userId);
+
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    SikayetId = null,
+                    Tarih = DateTime.UtcNow,
+                    Aciklama = $"Kullanıcı ID={userId} için şikayetler getirildi. Toplam: {complaints?.Count ?? 0}"
+                });
+
                 return complaints ?? new List<SikayetDetayDto>();
             }
             catch
@@ -183,5 +319,30 @@ namespace SehirAsistani.Api.Controllers
             }
         }
         #endregion
-    }
+
+        private string GetChangesDescription(Sikayet before, Sikayet after)
+        {
+            if (before == null || after == null)
+                return "Önceki veya sonraki şikayet bilgisi bulunamadı.";
+
+            var changes = new List<string>();
+
+            if (before.Baslik != after.Baslik)
+                changes.Add($"Başlık: '{before.Baslik}' => '{after.Baslik}'");
+
+            if (before.Aciklama != after.Aciklama)
+                changes.Add($"Açıklama değişti.");
+
+            if (before.Durum != after.Durum)
+                changes.Add($"Durum: {before.Durum} => {after.Durum}");
+
+            if (before.CozenBirim != after.CozenBirim)
+                changes.Add($"Çözen Birim: {before.CozenBirim} => {after.CozenBirim}");
+
+            if (changes.Count == 0)
+                return "Değişiklik yok.";
+
+            return string.Join("; ", changes);
+        }
+    }
 }
