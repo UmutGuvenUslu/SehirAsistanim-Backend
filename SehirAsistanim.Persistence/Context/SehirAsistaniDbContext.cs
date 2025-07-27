@@ -65,7 +65,7 @@ public class SehirAsistaniDbContext : DbContext
             entity.Property(e => e.Tur).HasColumnType("rolturu");
         });
     }
-}
+
 
     #endregion
 }
