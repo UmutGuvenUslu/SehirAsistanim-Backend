@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistani.api\\controllers\\sikayetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|solutionrelative:sehirasistani.api\\controllers\\sikayetcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\services\\sikayetservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.infrastructure\\services\\sikayetcozumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{73066D61-9EA3-4D16-9762-FFD68F20A77C}|SehirAsistanim.Infrastructure\\SehirAsistanim.Infrastructure.csproj|solutionrelative:sehirasistanim.infrastructure\\services\\sikayetcozumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -54,7 +62,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
@@ -66,7 +74,33 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "SikayetController.cs",
+              "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
+              "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
+              "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetController.cs",
+              "RelativeToolTip": "SehirAsistani.Api\\Controllers\\SikayetController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAgwHsAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T23:46:28.561Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "SikayetService.cs",
+              "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetService.cs",
+              "ViewState": "AgIAACQAAAAAAAAAAAAowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T23:46:22.915Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ISikayetCozumService.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Interfaces\\ISikayetCozumService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Interfaces\\ISikayetCozumService.cs",
@@ -78,7 +112,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "SehirAsistaniDbContext.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
@@ -90,7 +124,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 7,
               "Title": "Kullanici.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Kullanici.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\Kullanici.cs",
@@ -102,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "Sikayet.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\Sikayet.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\Sikayet.cs",
@@ -114,7 +148,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "SikayetCozum.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetCozum.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetCozum.cs",
@@ -126,7 +160,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "SikayetLog.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Entities\\SikayetLog.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Entities\\SikayetLog.cs",
@@ -138,7 +172,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "AddCozumFormRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Domain\\Dto\u0027s\\AddCozumFormRequestDto.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Domain\\Dto\u0027s\\AddCozumFormRequestDto.cs",
@@ -150,20 +184,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "SikayetCozumService.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAADwvygAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAADwvyUAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-27T20:09:09.103Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 8,
               "Title": "SikayetCozumController.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\SikayetCozumController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\SikayetCozumController.cs",
@@ -175,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "RolTuruController.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\RolTuruController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\RolTuruController.cs",
@@ -187,7 +221,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "JwtService.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\JwtService.cs",
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\JwtService.cs",

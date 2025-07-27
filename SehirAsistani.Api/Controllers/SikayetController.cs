@@ -124,7 +124,8 @@ namespace SehirAsistani.Api.Controllers
         #endregion
 
         #region Şikayet Güncelle (Admin)
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,BirimAdmin")]
+
         [HttpPut]
         public async Task<bool> Update([FromBody] Sikayet sikayet)
         {
@@ -157,7 +158,8 @@ namespace SehirAsistani.Api.Controllers
         #endregion
 
         #region Durum Güncelle (Çözüldü Yap)
-        [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "Admin,BirimAdmin")]
+
         [HttpPut("{id}/{durum}")]
         public async Task<bool> UpdateDurum(int id, sikayetdurumu durum)
         {
@@ -187,8 +189,8 @@ namespace SehirAsistani.Api.Controllers
         #endregion
 
         #region İstatistikler (Admin)
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "BirimAdmin")]
+        [Authorize(Roles = "Admin,BirimAdmin")]
+
         [HttpGet]
         public async Task<int> TotalSikayetSayisi()
         {
@@ -262,8 +264,7 @@ namespace SehirAsistani.Api.Controllers
         #endregion
 
         #region Şikayet Sil (Admin)
-        [Authorize(Roles = "Admin")]
-        [Authorize(Roles = "BirimAdmin")]
+        [Authorize(Roles = "Admin,BirimAdmin")]
         [HttpDelete("{id}")]
         public async Task<bool> Delete(int id)
         {

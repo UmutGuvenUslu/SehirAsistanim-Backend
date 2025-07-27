@@ -30,18 +30,18 @@ namespace SehirAsistanim.Infrastructure.Services
                 .Replace("ğ", "g")
                 .Where(c => !char.IsWhiteSpace(c)));
         }
+
         public async Task<List<Sikayet>> GetSikayetlerForBirimAsync(string birimAdi)
         {
-            // Girilen adı normalize et (küçük harf, boşlukları kaldır)
             var normalizedInput = Normalize(birimAdi);
 
-            return  _unitOfWork.Repository<Sikayet>()
+            return _unitOfWork.Repository<Sikayet>()
                 .GetQueryable()
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
                 .Where(s => s.Durum == sikayetdurumu.Inceleniyor && s.SikayetTuru.Ad != null)
                 .AsEnumerable() 
-                .Where(s => Normalize(s.SikayetTuru.Ad) == normalizedInput)
+                .Where(s => Normalize(s.SikayetTuru.Ad).Contains(normalizedInput)) 
                 .ToList(); 
         }
 
