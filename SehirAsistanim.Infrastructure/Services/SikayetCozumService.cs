@@ -22,8 +22,17 @@ namespace SehirAsistanim.Infrastructure.Services
         // ROL ADINI normalize eden yardımcı fonksiyon
         private string NormalizeRolAdi(string rolAdi)
         {
-            if (rolAdi.EndsWith("Birimi"))
-                rolAdi = rolAdi.Substring(0, rolAdi.Length - "Birimi".Length);
+            // Sonundaki "Birimi" veya "Yönetimi" kaldırılır
+            string[] kelimeSonEkleri = new[] { "Birimi", "Yönetimi" };
+
+            foreach (var ek in kelimeSonEkleri)
+            {
+                if (rolAdi.EndsWith(ek))
+                {
+                    rolAdi = rolAdi.Substring(0, rolAdi.Length - ek.Length);
+                    break;
+                }
+            }
 
             // Büyük harflerden önce boşluk ekle (Türkçe karakter destekli)
             var withSpaces = Regex.Replace(rolAdi, @"(?<!^)(?=[A-ZÇĞİÖŞÜ])", " ");
@@ -31,7 +40,8 @@ namespace SehirAsistanim.Infrastructure.Services
             // "ve" birleşikse boşluk ekle
             withSpaces = withSpaces.Replace("ve", " ve ");
 
-            return withSpaces.Trim();
+            // Fazla boşlukları temizle
+            return Regex.Replace(withSpaces.Trim(), @"\s+", " ");
         }
 
         // Belediye biriminin görebileceği şikayetleri listele
@@ -39,25 +49,28 @@ namespace SehirAsistanim.Infrastructure.Services
         {
             var normalizeRol = NormalizeRolAdi(roladi);
 
-            return await _unitOfWork.Repository<Sikayet>()
+            var sikayetler = await _unitOfWork.Repository<Sikayet>()
                 .GetQueryable()
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
                 .Include(s => s.CozenBirim)
-                .Include(s => s.SikayetCozumlar)  // navigation property ismiyle uyumlu
+                .Include(s => s.SikayetCozumlar)
                 .Where(s => s.CozenBirim != null &&
-                            s.CozenBirim.BirimAdi.StartsWith(normalizeRol) &&
-                            !s.Silindimi)
+                            !s.Silindimi &&
+                            EF.Functions.Like(s.CozenBirim.BirimAdi, normalizeRol + "%"))
                 .ToListAsync();
+
+            return sikayetler;
         }
 
+        // Şikayete çözüm ekle
         public async Task<bool> AddCozumFormAsync(int sikayetId, int cozenKullaniciId, string aciklama, string? fotoUrl)
         {
             var sikayetRepo = _unitOfWork.Repository<Sikayet>();
             var cozumRepo = _unitOfWork.Repository<SikayetCozum>();
 
             var sikayet = await sikayetRepo.GetQueryable()
-                .Include(s => s.SikayetCozumlar)  // navigation property düzeltilmeli
+                .Include(s => s.SikayetCozumlar)
                 .FirstOrDefaultAsync(s => s.Id == sikayetId);
 
             if (sikayet == null) return false;
@@ -80,6 +93,7 @@ namespace SehirAsistanim.Infrastructure.Services
             return true;
         }
 
+        // Şikayetin tür doğru mu alanını güncelle
         public async Task<bool> SetSikayetTurDogruMuAsync(int sikayetId, bool dogruMu)
         {
             var sikayetRepo = _unitOfWork.Repository<Sikayet>();
