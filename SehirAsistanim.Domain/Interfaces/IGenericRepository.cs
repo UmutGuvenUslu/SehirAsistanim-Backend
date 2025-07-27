@@ -9,5 +9,6 @@
         Task Delete(int id);
         Task<bool> Exists(int id);
         IQueryable<T> GetQueryable();
+        Task RemoveRange(IEnumerable<T> entities);
     }
 }

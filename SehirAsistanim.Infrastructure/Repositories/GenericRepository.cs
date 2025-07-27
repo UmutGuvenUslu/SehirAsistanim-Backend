@@ -74,7 +74,13 @@ namespace SehirAsistanim.Infrastructure.Repositories
 
         #endregion
 
-       
+        #region RemoveRange
+        public async Task RemoveRange(IEnumerable<T> entities)
+        {
+            _dbSet.RemoveRange(entities);
+            await _context.SaveChangesAsync();
+        }
+        #endregion
 
     }
 }

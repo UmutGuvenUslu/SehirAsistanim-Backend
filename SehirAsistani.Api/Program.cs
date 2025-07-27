@@ -85,6 +85,8 @@ builder.Services.AddScoped<ISikayetCozumService, SikayetCozumService>();
 builder.Services.AddScoped<IRolService, RolService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<EmailService>();
+builder.Services.AddHostedService<LogTemizlemeService>();
+
 #endregion
 
 builder.Services.AddMemoryCache();

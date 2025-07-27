@@ -10,6 +10,8 @@ namespace SehirAsistanim.Domain.Interfaces
     public interface ISikayetLoglariService
     {
         Task LogAsync(SikayetLog sikayetLog);
+        Task DeleteLogsOlderThan(DateTime date);
+
 
     }
 }

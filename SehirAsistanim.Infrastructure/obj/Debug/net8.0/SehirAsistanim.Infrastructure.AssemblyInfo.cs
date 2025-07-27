@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SehirAsistanim.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea0dc1cc6eb09e79bd4c0a9a58b57492f53c39ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5caed27ba1f085c0d8e07677b28b53422c6378c9")]
 [assembly: System.Reflection.AssemblyProductAttribute("SehirAsistanim.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SehirAsistanim.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
