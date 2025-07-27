@@ -36,7 +36,7 @@ namespace SehirAsistanim.Infrastructure.Services
         }
 
         // Belediye biriminin görebileceği şikayetleri listele
-        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync([FromQuery]string roladi)
+        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync(string roladi)
         {
             var normalizeRol = NormalizeRolAdi(roladi);
 
@@ -45,11 +45,12 @@ namespace SehirAsistanim.Infrastructure.Services
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
                 .Include(s => s.CozenBirim)
-                .Include(s => s.sikayetCozum)
+                .Include(s => s.SikayetCozum)   
                 .Where(s => s.CozenBirim != null &&
                             s.CozenBirim.BirimAdi.StartsWith(normalizeRol) &&
                             !s.Silindimi)
                 .ToListAsync();
+        }
         }
 
         // Şikayete çözüm formu ekle (bir kez eklenebilir)
