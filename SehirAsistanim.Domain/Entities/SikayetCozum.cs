@@ -14,7 +14,7 @@ namespace SehirAsistanim.Domain.Entities
         [Column("sikayetid")]
         public int SikayetId { get; set; }
 
-        [Column("cozenkullanici")]
+        [Column("cozenkullaniciid")]
         public int CozenKullaniciId { get; set; }
 
         [Column("cozumaciklamasi")]
