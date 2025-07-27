@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SehirAsistanim.Domain.Entities;
+using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -22,13 +23,13 @@ namespace SehirAsistanim.Infrastructure.Services
             var normalizedBirimAdi = birimAdi.Replace(" ", "").ToLowerInvariant();
 
             return await _unitOfWork.Repository<Sikayet>()
-                .GetQueryable()
-                .Include(s => s.Kullanici)
-                .Include(s => s.SikayetTuru)
-                .Include(s => s.CozenBirim)
-                .Where(s => s.Durum.ToString() == "Onaylandı" &&
-                            s.SikayetTuru.ToString().ToLower().Replace(" ", "") == normalizedBirimAdi)
-                .ToListAsync();
+       .GetQueryable()
+       .Include(s => s.Kullanici)
+            .Include(s => s.SikayetTuru)
+       .Where(s => s.Durum == sikayetdurumu.Inceleniyor &&
+                   s.SikayetTuru.Ad != null &&
+                   s.SikayetTuru.Ad.ToLower() == birimAdi.ToLower())
+       .ToListAsync();
         }
 
         public async Task<bool> AddCozumFormAsync(int sikayetId, int cozenKullaniciId, string aciklama, string? fotoUrl)
