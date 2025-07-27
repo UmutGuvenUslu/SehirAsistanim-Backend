@@ -80,6 +80,7 @@ builder.Services.AddScoped<ISmtpService, SmtpService>();
 builder.Services.AddScoped<IDuyguAnaliz, DuyguAnalizService>();
 builder.Services.AddScoped<ISikayetService, SikayetService>();
 builder.Services.AddScoped<ISikayetDogrulamaService, SikayetDogrulamaService>();
+builder.Services.AddScoped<IRolService, RolService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<EmailService>();
 #endregion
