@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Interfaces;
@@ -26,8 +25,8 @@ namespace SehirAsistanim.Infrastructure.Services
             if (rolAdi.EndsWith("Birimi"))
                 rolAdi = rolAdi.Substring(0, rolAdi.Length - "Birimi".Length);
 
-            // CamelCase ayırma (Türkçe karakter destekli)
-            var withSpaces = Regex.Replace(rolAdi, "([a-zçğıöşü])([A-ZÇĞİÖŞÜ])", "$1 $2");
+            // Büyük harflerden önce boşluk ekle (Türkçe karakter destekli)
+            var withSpaces = Regex.Replace(rolAdi, @"(?<!^)(?=[A-ZÇĞİÖŞÜ])", " ");
 
             // "ve" birleşikse boşluk ekle
             withSpaces = withSpaces.Replace("ve", " ve ");
@@ -45,7 +44,7 @@ namespace SehirAsistanim.Infrastructure.Services
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
                 .Include(s => s.CozenBirim)
-                .Include(s => s.SikayetCozumlar)  // burası düzeltilmeli
+                .Include(s => s.SikayetCozumlar)  // navigation property ismiyle uyumlu
                 .Where(s => s.CozenBirim != null &&
                             s.CozenBirim.BirimAdi.StartsWith(normalizeRol) &&
                             !s.Silindimi)
@@ -58,7 +57,7 @@ namespace SehirAsistanim.Infrastructure.Services
             var cozumRepo = _unitOfWork.Repository<SikayetCozum>();
 
             var sikayet = await sikayetRepo.GetQueryable()
-                .Include(s => s.SikayetCozumlar)  // burası da düzeltilmeli
+                .Include(s => s.SikayetCozumlar)  // navigation property düzeltilmeli
                 .FirstOrDefaultAsync(s => s.Id == sikayetId);
 
             if (sikayet == null) return false;
@@ -94,7 +93,5 @@ namespace SehirAsistanim.Infrastructure.Services
 
             return true;
         }
-
-
     }
 }
