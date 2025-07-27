@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{5CCBEDBE-AB3E-4BF8-88D5-30D08E71947E}|SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.persistence\\context\\sehirasistanidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{5CCBEDBE-AB3E-4BF8-88D5-30D08E71947E}|SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj|solutionrelative:sehirasistanim.persistence\\context\\sehirasistanidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistani.api\\controllers\\rolturucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1333E6BB-1A43-419A-9B56-461812ED91EC}|SehirAsistani.Api\\SehirAsistani.Api.csproj|solutionrelative:sehirasistani.api\\controllers\\rolturucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{5CCBEDBE-AB3E-4BF8-88D5-30D08E71947E}|SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.persistence\\context\\sehirasistanidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5CCBEDBE-AB3E-4BF8-88D5-30D08E71947E}|SehirAsistanim.Persistence\\SehirAsistanim.Persistence.csproj|solutionrelative:sehirasistanim.persistence\\context\\sehirasistanidbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{037665EA-3AC6-4374-91F4-BF8E0B1F522A}|SehirAsistanim.Domain\\SehirAsistanim.Domain.csproj|c:\\users\\umutg\\onedrive\\desktop\\sehirasistanim-backend\\sehirasistanim.domain\\interfaces\\irolservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -70,7 +70,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
@@ -86,25 +86,25 @@
               "IsPinned": true
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "SehirAsistaniDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
-              "RelativeDocumentMoniker": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
-              "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
-              "RelativeToolTip": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAowEMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-27T14:48:31.831Z",
-              "EditorCaption": ""
-            },
-            {
               "$type": "Bookmark",
               "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SehirAsistaniDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
+              "RelativeDocumentMoniker": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
+              "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
+              "RelativeToolTip": "SehirAsistanim.Persistence\\Context\\SehirAsistaniDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-27T14:48:31.831Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -120,13 +120,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "RolTuruController.cs",
               "DocumentMoniker": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\RolTuruController.cs",
               "RelativeDocumentMoniker": "SehirAsistani.Api\\Controllers\\RolTuruController.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistani.Api\\Controllers\\RolTuruController.cs",
               "RelativeToolTip": "SehirAsistani.Api\\Controllers\\RolTuruController.cs",
-              "ViewState": "AgIAABIAAAAAAAAAAAAowB4AAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-27T14:31:35.876Z",
               "EditorCaption": ""

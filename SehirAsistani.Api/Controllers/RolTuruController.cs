@@ -17,21 +17,34 @@ public class RolTuruController : ControllerBase
     [HttpGet]
     public IActionResult GetRolTurleri()
     {
-        var values = Enum.GetValues(typeof(rolturu))
-                         .Cast<rolturu>()
-                         .Select(e => new
-                         {
-                             Name = e.ToString(),
-                             id = (int)e
-                         });
+        try
+        {
+            var values = Enum.GetValues(typeof(rolturu))
+                             .Cast<rolturu>()
+                             .Select(e => new
+                             {
+                                 Name = e.ToString(),
+                                 id = (int)e
+                             });
 
-        return Ok(values);
+            return Ok(values);
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"An error occurred while retrieving role types: {ex.Message}");
+        }
     }
-
     [HttpPost]
     public async Task<IActionResult> AddRol([FromBody] RolTuruRequest request)
     {
-        var result = await _rolService.AddRol(request);
-        return result;
+        try
+        {
+            var result = await _rolService.AddRol(request);
+            return result;
+        }
+        catch (Exception ex)
+        {
+            return BadRequest($"An error occurred while adding role type: {ex.Message}");
+        }
     }
 }
