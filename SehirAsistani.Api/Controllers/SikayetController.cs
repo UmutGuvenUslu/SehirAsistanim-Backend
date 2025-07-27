@@ -183,5 +183,5 @@ namespace SehirAsistani.Api.Controllers
             }
         }
         #endregion
-    }
+    }
 }
