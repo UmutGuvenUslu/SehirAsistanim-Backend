@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SehirAsistanim.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea0dc1cc6eb09e79bd4c0a9a58b57492f53c39ef")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edbe0a06020a8766832db216cbec1501e8854e01")]
 [assembly: System.Reflection.AssemblyProductAttribute("SehirAsistanim.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SehirAsistanim.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

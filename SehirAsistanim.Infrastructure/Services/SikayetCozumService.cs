@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SehirAsistanim.Domain.Entities;
@@ -18,17 +19,34 @@ namespace SehirAsistanim.Infrastructure.Services
             _unitOfWork = unitOfWork;
         }
 
-        // Belediye biriminin görebileceği şikayetleri listele
-        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync(string birimAdi)
+        // ROL ADINI normalize eden yardımcı fonksiyon
+        private string NormalizeRolAdi(string rolAdi)
         {
-            return await _unitOfWork.Repository<Sikayet>().
-                GetQueryable()
+            if (rolAdi.EndsWith("Birimi"))
+                rolAdi = rolAdi.Substring(0, rolAdi.Length - "Birimi".Length);
+
+            // CamelCase ayırma (Türkçe karakter destekli)
+            var withSpaces = Regex.Replace(rolAdi, "([a-zçğıöşü])([A-ZÇĞİÖŞÜ])", "$1 $2");
+
+            // "ve" birleşikse boşluk ekle
+            withSpaces = withSpaces.Replace("ve", " ve ");
+
+            return withSpaces.Trim();
+        }
+
+        // Belediye biriminin görebileceği şikayetleri listele
+        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync(string roladi)
+        {
+            var normalizeRol = NormalizeRolAdi(roladi);
+
+            return await _unitOfWork.Repository<Sikayet>()
+                .GetQueryable()
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
                 .Include(s => s.CozenBirim)
                 .Include(s => s.sikayetCozum)
                 .Where(s => s.CozenBirim != null &&
-                            s.CozenBirim.BirimAdi == birimAdi &&
+                            s.CozenBirim.BirimAdi.StartsWith(normalizeRol) &&
                             !s.Silindimi)
                 .ToListAsync();
         }
@@ -78,22 +96,6 @@ namespace SehirAsistanim.Infrastructure.Services
             return true;
         }
 
-        // Çoklu şikayet ID'leri için tür doğru mu alanını topluca true yap
-        public async Task<bool> SetSikayetTurDogruMuBulkAsync(List<int> sikayetIdListesi)
-        {
-            var sikayetRepo = _unitOfWork.Repository<Sikayet>();
-
-            var sikayetler = sikayetRepo.GetAll().Result
-                .Where(s => sikayetIdListesi.Contains(s.Id));
-
-            foreach (var sikayet in sikayetler)
-            {
-                sikayet.turdogrumu = true;
-                sikayetRepo.Update(sikayet);
-            }
-
-            await _unitOfWork.CommitAsync();
-            return true;
-        }
+       
     }
 }
