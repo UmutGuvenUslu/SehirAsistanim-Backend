@@ -26,7 +26,6 @@ namespace SehirAsistanim.Domain.Entities
         [Column("cozumetarihi")]
         public DateTime CozumeTarihi { get; set; }
 
-
         [ForeignKey(nameof(SikayetId))]
         public Sikayet? Sikayet { get; set; }
 

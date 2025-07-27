@@ -1,16 +1,14 @@
-﻿using System.ComponentModel.DataAnnotations;
-using SehirAsistanim.Domain.Enums;
+﻿using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Text.Json.Serialization;
+using System.Collections.Generic;
 
 namespace SehirAsistanim.Domain.Entities
 {
     [Table("sikayetler")]
     public class Sikayet : IEntitiy
     {
-
         [Key]
         [Column("id")]
         public int Id { get; set; }
@@ -42,22 +40,14 @@ namespace SehirAsistanim.Domain.Entities
         public bool Silindimi { get; set; } = false;
         [Column("cozenbirimid")]
         public int? CozenBirimId { get; set; }
-
         [Column("turdogrumu")]
         public bool turdogrumu { get; set; } = true;
 
-
         public Kullanici? Kullanici { get; set; }
-
-        
         public SikayetTuru? SikayetTuru { get; set; }
-
-        
         public BelediyeBirimi? CozenBirim { get; set; }
 
-        public ICollection<SikayetCozum>? sikayetCozum { get; set; }
-
-        public SikayetCozum? SikayetCozum { get; set; }
-
+        // Burada bire çok ilişki için ICollection kullandık
+        public ICollection<SikayetCozum>? SikayetCozumlar { get; set; }
     }
 }

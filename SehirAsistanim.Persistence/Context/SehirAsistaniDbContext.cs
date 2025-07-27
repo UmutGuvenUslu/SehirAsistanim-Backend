@@ -20,7 +20,7 @@ public class SehirAsistaniDbContext : DbContext
     public DbSet<SikayetLog> SikayetLoglari { get; set; }
     public DbSet<SikayetCozum> SikayetCozumleri { get; set; }
     public DbSet<Bildirim> Bildirimler { get; set; }
-    public DbSet<Rol> Roller { get; set; } 
+    public DbSet<Rol> Roller { get; set; }
     #endregion
 
     #region OnModelCreating
@@ -57,10 +57,12 @@ public class SehirAsistaniDbContext : DbContext
                 .HasColumnType("timestamp with time zone");
         });
 
+        // İLİŞKİYİ BİRE ÇOK OLARAK TANIMLA
         modelBuilder.Entity<SikayetCozum>()
-        .HasOne(sc => sc.Sikayet)
-        .WithOne(s => s.SikayetCozum)
-        .HasForeignKey<SikayetCozum>(sc => sc.SikayetId);
+            .HasOne(sc => sc.Sikayet)
+            .WithMany(s => s.SikayetCozumlar)
+            .HasForeignKey(sc => sc.SikayetId)
+            .OnDelete(DeleteBehavior.Cascade);  // istersen silebilirsin
 
         modelBuilder.Entity<Rol>(entity =>
         {

@@ -45,27 +45,25 @@ namespace SehirAsistanim.Infrastructure.Services
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
                 .Include(s => s.CozenBirim)
-                .Include(s => s.SikayetCozum)   
+                .Include(s => s.SikayetCozumlar)  // burası düzeltilmeli
                 .Where(s => s.CozenBirim != null &&
                             s.CozenBirim.BirimAdi.StartsWith(normalizeRol) &&
                             !s.Silindimi)
                 .ToListAsync();
         }
-        
 
-        // Şikayete çözüm formu ekle (bir kez eklenebilir)
         public async Task<bool> AddCozumFormAsync(int sikayetId, int cozenKullaniciId, string aciklama, string? fotoUrl)
         {
             var sikayetRepo = _unitOfWork.Repository<Sikayet>();
             var cozumRepo = _unitOfWork.Repository<SikayetCozum>();
 
             var sikayet = await sikayetRepo.GetQueryable()
-                .Include(s => s.sikayetCozum)
+                .Include(s => s.SikayetCozumlar)  // burası da düzeltilmeli
                 .FirstOrDefaultAsync(s => s.Id == sikayetId);
 
             if (sikayet == null) return false;
 
-            if (sikayet.sikayetCozum != null && sikayet.sikayetCozum.Any())
+            if (sikayet.SikayetCozumlar != null && sikayet.SikayetCozumlar.Any())
                 return false;
 
             var cozum = new SikayetCozum
@@ -83,7 +81,6 @@ namespace SehirAsistanim.Infrastructure.Services
             return true;
         }
 
-        // Tek bir şikayetin tür doğru mu alanını ayarla
         public async Task<bool> SetSikayetTurDogruMuAsync(int sikayetId, bool dogruMu)
         {
             var sikayetRepo = _unitOfWork.Repository<Sikayet>();
@@ -98,6 +95,6 @@ namespace SehirAsistanim.Infrastructure.Services
             return true;
         }
 
-       
+
     }
 }
