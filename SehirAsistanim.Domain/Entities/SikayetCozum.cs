@@ -30,7 +30,7 @@ namespace SehirAsistanim.Domain.Entities
         [ForeignKey(nameof(SikayetId))]
         public Sikayet? Sikayet { get; set; }
 
-        [ForeignKey("cozenkullanici")]
+        [ForeignKey(nameof(CozenKullaniciId))]
         public Kullanici? CozenKullanici { get; set; }
     }
 }
