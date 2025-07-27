@@ -57,6 +57,10 @@ public class SehirAsistaniDbContext : DbContext
                 .HasColumnType("timestamp with time zone");
         });
 
+        modelBuilder.Entity<SikayetCozum>()
+        .HasOne(sc => sc.Sikayet)
+        .WithOne(s => s.SikayetCozum)
+        .HasForeignKey<SikayetCozum>(sc => sc.SikayetId);
 
         modelBuilder.Entity<Rol>(entity =>
         {

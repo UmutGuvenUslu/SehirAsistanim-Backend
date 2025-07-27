@@ -56,5 +56,8 @@ namespace SehirAsistanim.Domain.Entities
         public BelediyeBirimi? CozenBirim { get; set; }
 
         public ICollection<SikayetCozum>? sikayetCozum { get; set; }
+
+        public SikayetCozum? SikayetCozum { get; set; }
+
     }
 }
