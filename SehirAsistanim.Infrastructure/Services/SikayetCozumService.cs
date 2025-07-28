@@ -51,13 +51,30 @@ namespace SehirAsistanim.Infrastructure.Services
             if (sikayet == null)
                 return false;
 
-            sikayet.Aciklama = aciklama;
-            sikayet.FotoUrl = fotoUrl;
+            // Eğer zaten çözüm varsa false dönebiliriz
+            var existingSolution =  _unitOfWork.Repository<SikayetCozum>().GetAll().Result.ToList().
+                Find(c => c.SikayetId == sikayetId);
+            if (existingSolution != null)
+                return false;
+
+            var newSolution = new SikayetCozum
+            {
+                SikayetId = sikayetId,
+                CozenKullaniciId = cozenKullaniciId,
+                CozumAciklamasi = aciklama,
+                CozumFotoUrl = fotoUrl,
+                CozumeTarihi = DateTime.UtcNow
+            };
+
+            await _unitOfWork.Repository<SikayetCozum>().Add(newSolution);
+
+            // İstersen şikayetin durumunu güncelle
             sikayet.CozulmeTarihi = DateTime.UtcNow;
-            sikayet.CozenBirimId = cozenKullaniciId;
 
             _unitOfWork.Repository<Sikayet>().Update(sikayet);
+
             await _unitOfWork.CommitAsync();
+
             return true;
         }
 
