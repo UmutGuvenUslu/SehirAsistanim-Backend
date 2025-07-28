@@ -102,8 +102,7 @@
               "RelativeToolTip": "SehirAsistanim.Domain\\Enums\\RolTuru.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T03:02:12.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T03:02:12.034Z"
             },
             {
               "$type": "Document",
@@ -115,8 +114,7 @@
               "RelativeToolTip": "SehirAsistanim.Domain\\Interfaces\\ISikayetCozumService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T02:43:16.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T02:43:16.292Z"
             },
             {
               "$type": "Document",
@@ -128,8 +126,7 @@
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\BelediyeBirimiService.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-28T02:32:57.282Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-28T02:32:57.282Z"
             },
             {
               "$type": "Document",
@@ -175,7 +172,7 @@
               "RelativeDocumentMoniker": "SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
               "ToolTip": "C:\\Users\\umutg\\OneDrive\\Desktop\\SehirAsistanim-Backend\\SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
               "RelativeToolTip": "SehirAsistanim.Infrastructure\\Services\\SikayetCozumService.cs",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAgwDkAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAADsAAAAAAAAAAAAgwFgAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-27T20:09:09.103Z",
               "EditorCaption": ""

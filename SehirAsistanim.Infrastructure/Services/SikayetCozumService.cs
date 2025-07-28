@@ -42,10 +42,10 @@ namespace SehirAsistanim.Infrastructure.Services
                   .Include(s => s.SikayetTuru)
                   .Include(s => s.CozenBirim)
                   .Include(s => s.SikayetCozumlar)
-                  .AsEnumerable()  // Veriyi çekip memory'de işle
+                  .AsEnumerable()  // Bellekte filtreleme için veriyi çekiyoruz
                   .Where(s =>
                       string.IsNullOrEmpty(normalizedInput) ||
-                      Normalize(s.SikayetTuru.Ad).StartsWith(normalizedInput)
+                      Normalize(s.SikayetTuru.Ad).Contains(normalizedInput)
                   );
 
             var list = query.Select(s => new SikayetDetayDto
