@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Interfaces;
 
 namespace SehirAsistanim.Domain.Dto_s
@@ -35,6 +36,8 @@ namespace SehirAsistanim.Domain.Dto_s
         // Çözen Birim Bilgileri
         public int? CozenBirimId { get; set; }
         public string? CozenBirimAdi { get; set; }
+
+        public ICollection<SikayetCozum>? SikayetCozumlar { get; set; }
     }
 
 }

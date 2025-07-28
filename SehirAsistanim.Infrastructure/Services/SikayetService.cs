@@ -30,7 +30,8 @@ namespace SehirAsistanim.Infrastructure.Services
                 .GetQueryable()
                 .Include(s => s.Kullanici)
                 .Include(s => s.SikayetTuru)
-                .Include(s => s.CozenBirim);
+                .Include(s => s.CozenBirim)
+                .Include(s => s.SikayetCozumlar);
 
             var list = await query.Select(s => new SikayetDetayDto
             {
@@ -55,7 +56,20 @@ namespace SehirAsistanim.Infrastructure.Services
                 SikayetTuruAdi = s.SikayetTuru.Ad,
 
                 CozenBirimId = s.CozenBirimId,
-                CozenBirimAdi = s.CozenBirim != null ? s.CozenBirim.BirimAdi : null
+                CozenBirimAdi = s.CozenBirim != null ? s.CozenBirim.BirimAdi : null,
+
+                SikayetCozumlar = s.SikayetCozumlar.Select(c => new SikayetCozum
+                {
+                    Id = c.Id,
+                    SikayetId = c.SikayetId,
+                    CozenKullaniciId = c.CozenKullaniciId,
+                    CozumAciklamasi = c.CozumAciklamasi,
+                    CozumFotoUrl = c.CozumFotoUrl,
+                    CozenKullanici = c.CozenKullanici
+                }).ToList()
+
+
+
             }).ToListAsync();
 
             return list;

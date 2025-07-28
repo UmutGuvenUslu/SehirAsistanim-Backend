@@ -9,27 +9,28 @@ using SehirAsistanim.Infrastructure.UnitOfWork;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Port Ayarı (Railway, Heroku vb. için)
 var port = Environment.GetEnvironmentVariable("PORT") ?? "8888";
 builder.WebHost.UseUrls($"http://*:{port}");
 
+// HealthChecks
 builder.Services.AddHealthChecks();
 
-#region Cors
+#region 🔓 CORS
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAll", builder =>
+    options.AddPolicy("AllowAll", policy =>
     {
-        builder.AllowAnyOrigin()
-               .AllowAnyHeader()
-               .AllowAnyMethod();
+        policy.AllowAnyOrigin()
+              .AllowAnyHeader()
+              .AllowAnyMethod();
     });
 });
 #endregion
 
-#region SQL Connection (Enum Mapping KALDIRILDI)
+#region 🛢️ PostgreSQL Connection
 
 string? databaseUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
-
 string connectionString;
 
 if (!string.IsNullOrEmpty(databaseUrl))
@@ -60,17 +61,13 @@ builder.Services.AddDbContext<SehirAsistaniDbContext>(options =>
         npgsqlOptions =>
         {
             npgsqlOptions.UseNetTopologySuite(); // Harita desteği
-            // MapEnum'ler kaldırıldı çünkü veritabanında text
-            // npgsqlOptions.MapEnum<rolturu>("rolturu");
-            // npgsqlOptions.MapEnum<sikayetdurumu>("sikayetdurumu");
-        })
-);
+        }));
 
 #endregion
 
-#region Dependency Injection
+#region 💉 Dependency Injection
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IKullaniciService,KullaniciService>();
+builder.Services.AddScoped<IKullaniciService, KullaniciService>();
 builder.Services.AddScoped<ISikayetTuruService, SikayetTuruService>();
 builder.Services.AddScoped<IBelediyeBirimiService, BelediyeBirimiService>();
 builder.Services.AddScoped<AuthService>();
@@ -86,13 +83,17 @@ builder.Services.AddScoped<IRolService, RolService>();
 builder.Services.AddScoped<JwtService>();
 builder.Services.AddScoped<EmailService>();
 builder.Services.AddHostedService<LogTemizlemeService>();
-
 #endregion
 
 builder.Services.AddMemoryCache();
 builder.Services.AddControllers();
+
+#region 📘 Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+#endregion
+
+#region 🔐 JWT Authentication
 builder.Services.AddAuthentication("Bearer")
     .AddJwtBearer("Bearer", options =>
     {
@@ -103,7 +104,6 @@ builder.Services.AddAuthentication("Bearer")
             ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-
             ValidIssuer = jwtSettings["Issuer"],
             ValidAudience = jwtSettings["Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(
@@ -111,8 +111,11 @@ builder.Services.AddAuthentication("Bearer")
             )
         };
     });
+#endregion
 
 var app = builder.Build();
+
+#region 🚀 Middleware Pipeline
 
 if (app.Environment.IsDevelopment())
 {
@@ -124,18 +127,17 @@ app.UseHttpsRedirection();
 
 app.UseRouting();
 
-app.UseCors("AllowAll");
-
-
-app.UseMiddleware<ProfanityFilterMiddleware>();
-
+app.UseCors("AllowAll"); 
 
 app.UseAuthentication();
-
 app.UseAuthorization();
+
+app.UseMiddleware<ProfanityFilterMiddleware>();
 
 app.UseHealthChecks("/health");
 
 app.MapControllers();
 
 app.Run();
+
+#endregion
