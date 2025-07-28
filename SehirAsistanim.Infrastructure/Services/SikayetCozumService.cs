@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SehirAsistanim.Domain.Dto_s;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Enums;
 using SehirAsistanim.Domain.Interfaces;
@@ -31,19 +32,56 @@ namespace SehirAsistanim.Infrastructure.Services
                 .Where(c => !char.IsWhiteSpace(c)));
         }
 
-        public async Task<List<Sikayet>> GetSikayetlerForBirimAsync(string birimAdi)
+        public async Task<List<SikayetDetayDto>> GetSikayetlerForBirimAsync(string birimAdi)
         {
             var normalizedInput = Normalize(birimAdi);
 
-            return _unitOfWork.Repository<Sikayet>()
-                .GetQueryable()
-                .Include(s => s.Kullanici)
-                .Include(s=>s.SikayetCozumlar)
-                .Include(s => s.SikayetTuru)
-                .Where(s => s.Durum == sikayetdurumu.Inceleniyor && s.SikayetTuru.Ad != null)
-                .AsEnumerable() 
-                .Where(s => Normalize(s.SikayetTuru.Ad).Contains(normalizedInput)) 
-                .ToList(); 
+            var query = _unitOfWork.Repository<Sikayet>()
+                 .GetQueryable()
+                 .Include(s => s.Kullanici)
+                 .Include(s => s.SikayetTuru)
+                 .Include(s => s.CozenBirim)
+                 .Include(s => s.SikayetCozumlar)
+                 .Where(s => s.SikayetTuru.Ad.Contains(normalizedInput)); // <--- filtre burada!
+
+            var list = await query.Select(s => new SikayetDetayDto
+            {
+                Id = s.Id,
+                Baslik = s.Baslik,
+                Aciklama = s.Aciklama,
+                Latitude = s.Latitude,
+                Longitude = s.Longitude,
+                FotoUrl = s.FotoUrl,
+                GonderilmeTarihi = s.GonderilmeTarihi,
+                CozulmeTarihi = s.CozulmeTarihi,
+                Durum = s.Durum.ToString(),
+                DogrulanmaSayisi = s.DogrulanmaSayisi,
+                Silindimi = s.Silindimi,
+                DuyguPuani = s.DuyguPuani,
+
+                KullaniciId = s.KullaniciId,
+                KullaniciAdi = s.Kullanici.Isim + " " + s.Kullanici.Soyisim,
+                KullaniciEmail = s.Kullanici.Email,
+
+                SikayetTuruId = s.SikayetTuruId,
+                SikayetTuruAdi = s.SikayetTuru.Ad,
+
+                CozenBirimId = s.CozenBirimId,
+                CozenBirimAdi = s.CozenBirim != null ? s.CozenBirim.BirimAdi : null,
+
+                SikayetCozumlar = s.SikayetCozumlar.Select(c => new SikayetCozum
+                {
+                    Id = c.Id,
+                    SikayetId = c.SikayetId,
+                    CozenKullaniciId = c.CozenKullaniciId,
+                    CozumAciklamasi = c.CozumAciklamasi,
+                    CozumFotoUrl = c.CozumFotoUrl,
+                    CozenKullanici = c.CozenKullanici
+                }).ToList()
+
+            }).ToListAsync();
+
+            return list;
         }
 
         public async Task<bool> AddCozumFormAsync(int sikayetId, int cozenKullaniciId, string aciklama, string? fotoUrl)
@@ -70,13 +108,14 @@ namespace SehirAsistanim.Infrastructure.Services
             await _unitOfWork.Repository<SikayetCozum>().Add(newSolution);
 
             // İstersen şikayetin durumunu güncelle
+            
             sikayet.CozulmeTarihi = DateTime.UtcNow;
 
             var degisecek = _unitOfWork.Repository<Sikayet>().GetById(sikayetId).Result;
 
             degisecek.CozenBirimId = cozenKullaniciId;
             degisecek.CozulmeTarihi = DateTime.UtcNow;
-            degisecek.SikayetCozumlar.Add(newSolution);
+             degisecek.SikayetCozumlar.Add(newSolution);
 
             await _unitOfWork.CommitAsync();
 
