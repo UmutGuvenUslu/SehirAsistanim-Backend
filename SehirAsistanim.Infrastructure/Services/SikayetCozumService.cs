@@ -38,6 +38,7 @@ namespace SehirAsistanim.Infrastructure.Services
             return _unitOfWork.Repository<Sikayet>()
                 .GetQueryable()
                 .Include(s => s.Kullanici)
+                .Include(s=>s.SikayetCozumlar)
                 .Include(s => s.SikayetTuru)
                 .Where(s => s.Durum == sikayetdurumu.Inceleniyor && s.SikayetTuru.Ad != null)
                 .AsEnumerable() 
