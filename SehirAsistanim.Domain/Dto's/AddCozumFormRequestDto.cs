@@ -16,10 +16,10 @@ namespace SehirAsistanim.Domain.Dto_s
         public int CozenKullaniciId { get; set; }
 
         [JsonPropertyName("cozumaciklamasi")]
-        public string CozumAciklamasi { get; set; }
+        public string Aciklama { get; set; }
 
         [JsonPropertyName("cozumfotourl")]
-        public string? CozumFotoUrl { get; set; }
+        public string? FotoUrl { get; set; }
 
     }
 }
