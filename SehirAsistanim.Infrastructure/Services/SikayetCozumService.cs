@@ -71,7 +71,11 @@ namespace SehirAsistanim.Infrastructure.Services
             // İstersen şikayetin durumunu güncelle
             sikayet.CozulmeTarihi = DateTime.UtcNow;
 
-            _unitOfWork.Repository<Sikayet>().Update(sikayet);
+            var degisecek = _unitOfWork.Repository<Sikayet>().GetById(sikayetId).Result;
+
+            degisecek.CozenBirimId = cozenKullaniciId;
+            degisecek.CozulmeTarihi = DateTime.UtcNow;
+            degisecek.SikayetCozumlar.Add(newSolution);
 
             await _unitOfWork.CommitAsync();
 
