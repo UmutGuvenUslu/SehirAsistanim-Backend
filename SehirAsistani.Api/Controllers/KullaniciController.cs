@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using SehirAsistanim.Domain.Dto_s;
 using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Interfaces;
 using SehirAsistanim.Infrastructure.Services;
+using SehirAsistanim.Infrastructure.UnitOfWork;
 using System;
 using System.Collections.Generic;
 using System.Security.Claims;
@@ -15,12 +17,16 @@ namespace SehirAsistani.Api.Controllers
     public class KullaniciController : ControllerBase
     {
         private readonly IKullaniciService _service;
-        private readonly ISikayetLoglariService _logService;  
+        private readonly ISikayetLoglariService _logService;
+        private readonly IUnitOfWork _unitOfWork;
+        private readonly EmailService _emailService;
 
-        public KullaniciController(IKullaniciService service, ISikayetLoglariService logService)
+        public KullaniciController(IKullaniciService service, ISikayetLoglariService logService, IUnitOfWork unitOfWork, EmailService emailService)
         {
             _service = service;
             _logService = logService;
+            _unitOfWork = unitOfWork;
+            _emailService = emailService;
         }
 
         private int? GetUserIdFromClaims()
@@ -201,6 +207,67 @@ namespace SehirAsistani.Api.Controllers
             }
         }
         #endregion
+
+
+
+
+        #region Şikayet Çözüm Bildirimi Gönder
+        [HttpPost("sikayet-cozum-bildirimi")]
+        public async Task<IActionResult> SendComplaintSolutionNotification([FromBody] ComplaintSolutionNotificationRequest request)
+        {
+            try
+            {
+                var currentUserId = GetUserIdFromClaims();
+                if (!currentUserId.HasValue)
+                {
+                    return Unauthorized(new { Success = false, Message = "Kullanıcı kimliği belirlenemedi" });
+                }
+
+                // Kullanıcı ve şikayet bilgilerini al
+                var kullanici = await _service.GetById(request.KullaniciId);
+                var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(request.SikayetId);
+
+                if (kullanici == null || sikayet == null)
+                {
+                    return NotFound(new { Success = false, Message = "Kullanıcı veya şikayet bulunamadı" });
+                }
+
+                // Email gönder
+                await _emailService.SendComplaintSolvedNotification(
+                    request.KullaniciId,
+                    request.SikayetId
+                );
+
+                // Log kaydı
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = currentUserId,
+                    Aciklama = $"{kullanici.Email} kullanıcısına şikayet çözüm bildirimi gönderildi. Şikayet ID: {request.SikayetId}",
+                    Tarih = DateTime.UtcNow
+                });
+
+                return Ok(new { Success = true, Message = "Bildirim e-postası başarıyla gönderildi" });
+            }
+            catch (Exception ex)
+            {
+                await _logService.LogAsync(new SikayetLog
+                {
+                    KullaniciId = GetUserIdFromClaims(),
+                    Aciklama = $"Şikayet çözüm bildirimi gönderilirken hata: {ex.Message}",
+                    Tarih = DateTime.UtcNow
+                   
+                });
+
+                return StatusCode(StatusCodes.Status500InternalServerError,
+                    new { Success = false, Message = "Bildirim gönderilirken bir hata oluştu" });
+            }
+        }
+        #endregion
+
+
+
+
+
 
         private string GetChangesDescription(Kullanici before, Kullanici after)
         {

@@ -30,7 +30,6 @@ namespace SehirAsistanim.API.Controllers
         public async Task<IActionResult> AddCozumForm([FromBody] AddCozumFormRequestDto request)
         {
             var result = await _cozumService.AddCozumFormAsync(request.SikayetId, request.CozenKullaniciId, request.Aciklama, request.FotoUrl);
-            if (!result) return BadRequest("Çözüm eklenemedi. Şikayet bulunamadı ya da zaten çözüm eklenmiş.");
             return Ok("Çözüm başarıyla eklendi.");
         }
 

@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.Caching.Memory;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Caching.Memory;
+using SehirAsistanim.Domain.Entities;
 using SehirAsistanim.Domain.Interfaces;
 using System.Security.Cryptography;
 
@@ -6,14 +8,16 @@ namespace SehirAsistanim.Infrastructure.Services
 {
     public class EmailService
     {
+        private readonly IUnitOfWork _unitOfWork;
         private readonly ISmtpService _smtpService;
         private readonly IMemoryCache _memoryCache;
 
         #region Constructor
-        public EmailService(ISmtpService smtpService, IMemoryCache memoryCache)
+        public EmailService(ISmtpService smtpService, IMemoryCache memoryCache, IUnitOfWork unitOfWork)
         {
             _smtpService = smtpService;
             _memoryCache = memoryCache;
+            _unitOfWork = unitOfWork;
         }
         #endregion
 
@@ -48,6 +52,42 @@ namespace SehirAsistanim.Infrastructure.Services
             }
 
             return false;
+        }
+        #endregion
+
+        #region Çözüm Bildirim Maili Gönder
+        public async Task SendComplaintSolvedNotification(int kullaniciId, int sikayetId)
+        {
+            // Kullanıcı ve şikayet bilgilerini veritabanından al
+            var kullanici = await _unitOfWork.Repository<Kullanici>().GetById(kullaniciId);
+            var sikayet = await _unitOfWork.Repository<Sikayet>().GetById(sikayetId);
+
+            if (kullanici == null || sikayet == null)
+            {
+                throw new Exception("Kullanıcı veya şikayet bulunamadı");
+            }
+
+            // HTML email içeriği
+            var mesaj = $@"
+    <html>
+    <body style='font-family: Arial, sans-serif;'>
+        <h2 style='color: #4CAF50;'>Şikayetiniz Çözüldü!</h2>
+        <p>Sayın <b>{kullanici.Isim} {kullanici.Soyisim}</b>,</p>
+        <p><b>{sikayet.Baslik}</b> başlıklı şikayetiniz çözüme ulaşmıştır.</p>
+        <p>Teşekkür ederiz.</p>
+        <hr>
+        <p style='font-size: 12px; color: #777;'>
+            Bu e-posta otomatik olarak gönderilmiştir, lütfen yanıtlamayınız.
+        </p>
+    </body>
+    </html>";
+
+            // SMTP ile mail gönder
+            await _smtpService.Gonder(
+                toEmail: kullanici.Email,
+                subject: $"{sikayet.Baslik} Şikayetiniz Çözüldü",
+                htmlBody: mesaj
+            );
         }
         #endregion
     }
