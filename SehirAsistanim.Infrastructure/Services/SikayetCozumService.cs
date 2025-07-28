@@ -34,21 +34,21 @@ namespace SehirAsistanim.Infrastructure.Services
 
         public async Task<List<SikayetDetayDto>> GetSikayetlerForBirimAsync(string birimAdi)
         {
-            var normalizedInput = Normalize(birimAdi);
+            var normalizedInput = Normalize(birimAdi ?? "");
 
             var query = _unitOfWork.Repository<Sikayet>()
                   .GetQueryable()
-    .Include(s => s.Kullanici)
-    .Include(s => s.SikayetTuru)
-    .Include(s => s.CozenBirim)
-    .Include(s => s.SikayetCozumlar)
-    .AsEnumerable()  // Veriyi çekip memory'de işle
-    .Where(s =>
-        Normalize(s.SikayetTuru.Ad).Substring(0, Math.Min(4, s.SikayetTuru.Ad.Length)) ==
-        normalizedInput.Substring(0, Math.Min(4, normalizedInput.Length))
-    );
+                  .Include(s => s.Kullanici)
+                  .Include(s => s.SikayetTuru)
+                  .Include(s => s.CozenBirim)
+                  .Include(s => s.SikayetCozumlar)
+                  .AsEnumerable()  // Veriyi çekip memory'de işle
+                  .Where(s =>
+                      string.IsNullOrEmpty(normalizedInput) ||
+                      Normalize(s.SikayetTuru.Ad).StartsWith(normalizedInput)
+                  );
 
-            var list =  query.Select(s => new SikayetDetayDto
+            var list = query.Select(s => new SikayetDetayDto
             {
                 Id = s.Id,
                 Baslik = s.Baslik,
