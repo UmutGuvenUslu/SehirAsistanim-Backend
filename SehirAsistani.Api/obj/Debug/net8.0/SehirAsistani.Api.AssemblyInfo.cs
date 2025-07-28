@@ -15,7 +15,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SehirAsistani.Api")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+edbe0a06020a8766832db216cbec1501e8854e01")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c3fdb1b4031114cc15ac9d21baf4846c419d671f")]
 [assembly: System.Reflection.AssemblyProductAttribute("SehirAsistani.Api")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SehirAsistani.Api")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
